@@ -1,0 +1,10 @@
+.Main {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+table, th, td {
+    border: 1px solid black;
+}

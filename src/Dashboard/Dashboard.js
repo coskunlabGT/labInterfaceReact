@@ -8,7 +8,8 @@ export default class Dashboard extends Component {
       selectedUser: "N/A",
       selectedUserId: 0,
       selectedUserDashboard: [],
-      allUsers: []
+      allUsers: [],
+      researchDisplayCurrent: "all"
     }
   }
 
@@ -17,7 +18,7 @@ export default class Dashboard extends Component {
   }
 
   getResearch() {
-    console.log(this.state)
+
     const link = 'http://127.0.0.1:8000/UserManagement/get-Dashboard/';
     let data = {
         method: 'POST',
@@ -32,9 +33,9 @@ export default class Dashboard extends Component {
     .then(response => response.json())  // promise
     .then(response => {
         this.setState({selectedUserDashboard: response});
+        console.log(this.state)
     }).catch(err => {
-      this.setState({selectedUserDashboard: []});
-      console.log(err)
+        this.setState({selectedUserDashboard: []});
     })
   }
 
@@ -55,24 +56,47 @@ export default class Dashboard extends Component {
   findUserId(name) {
     this.state.allUsers.forEach(element => {
       if(element["name"] === name) {
-        this.setState(
-          {
-            selectedUserId: element["id"],
-            selectedUser: name
-        });
-      
+          this.state.selectedUserId =  element["id"];
+          this.state.selectedUser =  name;
+          this.getResearch();
       }
     })
   }
 
+  changeResearchDisplay(name) {
+    this.setState({researchDisplayCurrent: name})
+  }
+
+  displayResearch (element) {
+    if(this.state.researchDisplayCurrent == "all") {
+        return(<tr key={element['id']}>
+      <th>{element["name"]}</th>
+      <th>{element["description"]}</th>
+      <th>{element["due_date"]}</th>
+      <th>{element["approved"] == true ? "true" : "false"}</th>
+      </tr>)
+    } else if (this.state.researchDisplayCurrent == "current" && element["approved"] == true) {
+      return(<tr key={element['id']}>
+      <th>{element["name"]}</th>
+      <th>{element["description"]}</th>
+      <th>{element["due_date"]}</th>
+      <th>true</th>
+      </tr>)
+    } else if (element["approved"] == false) {
+  return(<tr key={element['id']}>
+    <th>{element["name"]}</th>
+    <th>{element["description"]}</th>
+    <th>{element["due_date"]}</th>
+    <th>false</th>
+    </tr>)
+    } 
+  }
+
   render() {
-    if (this.state.selectedUser != "N/A") {
-      this.getResearch();
-    }
     return (
       <div className="Main">
           <div>
-            <p>Student Name: {this.state.selectedUser}</p>
+            <h1>Student Name: {this.state.selectedUser}</h1>
             <div>
                 <div>List of all Users</div>
                 <select onChange={(option) => {
@@ -80,25 +104,32 @@ export default class Dashboard extends Component {
                 }}>
                     {this.state.allUsers.map(element => {return <option key={element.id}>{element.name}</option>})}
                 </select>
+                <div>
+                  <button onMouseDown={() => this.changeResearchDisplay("current")}>Current Research</button>
+                </div>
+                <div>
+                  <button onMouseDown={() => this.changeResearchDisplay("future")}>Future Research</button>
+                </div>
+                <div>
+                  <button onMouseDown={() => this.changeResearchDisplay("all")}>Deadlines</button>
+                </div>
             </div>
           </div>
-          <div>
-            <p>Current Research</p>
+          <div className="outline">
+            <h1>Current Research</h1>
             <table>
-              <tr>
-                <th style={{width:"200px"}}>Name</th>
-                <th style={{width:"500px"}}>Description</th>
-                <th style={{width:"150px"}}>Due Date</th>
-              </tr>
-              {this.state.selectedUserDashboard.map(element => 
-              {
-                return(<tr>
-                  <th>{element["name"]}</th>
-                  <th>{element["description"]}</th>
-                  <th>{element["due_date"]}</th>
-                </tr>)
-              })}
-
+              <tbody>
+                <tr>
+                  <th style={{width:"200px"}}>Name</th>
+                  <th style={{width:"500px"}}>Description</th>
+                  <th style={{width:"150px"}}>Due Date</th>
+                  <th style={{width:"150px"}}>Approved</th>
+                </tr>
+                {this.state.selectedUserDashboard.map(element => 
+                {
+                  return(this.displayResearch(element));
+                })}
+              </tbody>
             </table>
           </div>
       </div>

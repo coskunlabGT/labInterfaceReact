@@ -10,8 +10,11 @@ export default class App extends Component{
   constructor(props:any) {
     super(props);
     this.state = {
-      eventId:0,
-      event:[]
+      Title:"",
+      Location:"",
+      Description:"",
+      Start:"",
+      End:"",
     }
   }
 
@@ -27,9 +30,17 @@ export default class App extends Component{
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          "event_id": this.state.eventId
+body:JSON.stringify({
+         "summary": document.getElementById("Subject"),
+          "location": "test",
+           "description": "test",
+          "start": ,
+          "end": 
         })
+
+        
+          
+      
     
 
     }
@@ -38,6 +49,8 @@ export default class App extends Component{
     .then(response => response.json())  // promise
     .then(response => {
         this.setState({event: response});
+        console.log(response)
+
     })
   }
 

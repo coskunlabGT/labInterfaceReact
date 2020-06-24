@@ -71,25 +71,25 @@ export default class Dashboard extends Component {
     if(this.state.researchDisplayCurrent == "all") {
         return(<tr key={element['id']}>
       <th>{element["name"]}</th>
-      <th>{element["description"]}</th>
+      <th><a href={element["description"]}>Google Doc</a></th>
       <th>{element["due_date"]}</th>
       <th>{element["approved"] == true ? "true" : "false"}</th>
       </tr>)
     } else if (this.state.researchDisplayCurrent == "current" && element["approved"] == true) {
       return(<tr key={element['id']}>
       <th>{element["name"]}</th>
-      <th>{element["description"]}</th>
+      <th><a href={element["description"]}>Google Doc</a></th>
       <th>{element["due_date"]}</th>
       <th>true</th>
       </tr>)
     } else if (element["approved"] == false) {
   return(<tr key={element['id']}>
     <th>{element["name"]}</th>
-    <th>{element["description"]}</th>
+    <th><a href={element["description"]}>Google Doc</a></th>
     <th>{element["due_date"]}</th>
     <th>false</th>
     </tr>)
-    } 
+    }
   }
 
   render() {
@@ -125,7 +125,7 @@ export default class Dashboard extends Component {
                   <th style={{width:"150px"}}>Due Date</th>
                   <th style={{width:"150px"}}>Approved</th>
                 </tr>
-                {this.state.selectedUserDashboard.map(element => 
+                {this.state.selectedUserDashboard.map(element =>
                 {
                   return(this.displayResearch(element));
                 })}
@@ -135,8 +135,5 @@ export default class Dashboard extends Component {
       </div>
     );
   }
- 
+
 }
-
-
-

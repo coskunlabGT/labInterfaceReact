@@ -1,0 +1,40 @@
+
+.navbar {
+    display: flex;
+    background-color: #4141410a;
+    color: #414141;
+    text-align: center;
+    justify-content: space-around;
+    font-size: 25px;
+    font-weight: 500;
+    list-style: none;
+    text-decoration: none;  
+    padding-left: 45px;
+    margin-bottom: 50px;
+  }
+
+  .tab {
+    text-decoration: none;  
+    padding: 15px;
+  }
+
+  .tab:visited {
+    color: #414141;
+  }
+  
+  .tab:hover {
+    font-weight: bold;
+    background-color: #414141;
+    color: #ffffff;
+    padding: 15px;
+  }
+
+  .tab.active {
+    font-weight: bold;
+    background-color: #414141;
+    color: #ffffff;
+    padding: 15px;
+  }
+  
+  
+  

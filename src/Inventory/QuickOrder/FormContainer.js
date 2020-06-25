@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {API, LOCAL_HOST} from '../../Main/constants'
 import FormComponent from './FormComponent'
 
 class Form extends React.Component {
@@ -17,7 +17,7 @@ class Form extends React.Component {
     }
 
     componentDidMount() {
-        fetch('http://127.0.0.1:8000/QuickOrder/inventory/')
+        fetch({API}.API + '/QuickOrder/inventory/')
             .then((response) => response.json())
             .then(data => {
                 let inventory = data.map(item => {
@@ -30,7 +30,7 @@ class Form extends React.Component {
                 console.log(error);
             })
 
-            fetch('http://127.0.0.1:8000/UserManagement/get-Users/')
+            fetch({API}.API + '/UserManagement/get-Users/')
             .then((response) => response.json())
             .then(data => {
                 let users = data.map(user => {
@@ -53,7 +53,7 @@ class Form extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault()
-        const link = 'http://127.0.0.1:8000/QuickOrder/add-order/'
+        const link = {API}.API+ '/QuickOrder/add-order/'
         const data = {
             method: 'POST',
             headers: {
@@ -66,7 +66,7 @@ class Form extends React.Component {
         .then(response => {console.log(response)})
         .catch(error => {console.log(error)})
 
-        window.location = "http://localhost:3000/orders"
+        window.location = {LOCAL_HOST}.LOCAL_HOST + "/orders"
     }
 
     render() {

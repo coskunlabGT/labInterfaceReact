@@ -1,4 +1,5 @@
 import React from 'react'
+import {API, LOCAL_HOST} from '../../Main/constants'
 
 class Inventory extends React.Component {
     constructor() {
@@ -13,7 +14,7 @@ class Inventory extends React.Component {
 
     componentDidMount() {
         this.setState({loading: true})
-        let link = 'http://127.0.0.1:8000/QuickOrder/inventory/'
+        let link = {API}.API + '/QuickOrder/inventory/'
         let data = {
             method: 'GET',
         }
@@ -110,8 +111,8 @@ class Inventory extends React.Component {
                     </table>
                     
                     <div className = "inventoryButtons">
-                        <a href = "http://localhost:3000/quickOrder">Quick Order</a>
-                        <a href = "http://localhost:3000/orders">Order History</a>
+                        <a href = {LOCAL_HOST + "/inventory/quickOrder"}>Quick Order</a>
+                        <a href = {LOCAL_HOST + "/inventory/orders"}>Order History</a>
                     </div>
                 
                 </div>

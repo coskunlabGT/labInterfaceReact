@@ -1,4 +1,6 @@
 import React from 'react'
+import {API} from '../../Main/constants'
+
 
 class Orders extends React.Component {
     constructor() {
@@ -15,7 +17,7 @@ class Orders extends React.Component {
 
     componentDidMount() {
         this.setState({loading: true})
-        let link = 'http://127.0.0.1:8000/QuickOrder/orders/'
+        let link = {API}.API + '/QuickOrder/orders/'
         let data = {
             method: 'GET',
         }

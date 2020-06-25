@@ -3,6 +3,8 @@ import InputItem from './components/Item'
 import Quantity from './components/Quantity'
 import User from './components/User'
 
+import {LOCAL_HOST} from '../../Main/constants'
+
 function FormComponent(props) {
     return(
         <div className = "quickOrder">
@@ -24,7 +26,7 @@ function FormComponent(props) {
                 />
                 <div className = "buttons">
                     <button id = "submit" type = "submit">Submit</button>
-                    <a href = "http://localhost:3000/inventory" id = "back">Back</a>
+                    <a href = {LOCAL_HOST + "/inventory"} id = "back">Back</a>
                 </div>
             </form>
              

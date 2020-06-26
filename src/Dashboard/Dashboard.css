@@ -1,0 +1,42 @@
+.Main {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+th, td {
+    border: 1px solid #414141;
+}
+
+p, div, th {
+    color: #414141;
+    font-family: "Courier New";
+}
+
+h1 {
+    color: #414141;
+    font-family: "Courier New";
+    size: 30;
+}
+
+.outline {
+    outline: 5px solid #414141;
+    height: 500px;
+    position: relative;
+    top:20px;
+}
+
+button {
+    margin: 30px;
+    border: none;
+    color: #414141;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+    width: 150px;
+}

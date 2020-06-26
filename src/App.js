@@ -1,9 +1,12 @@
 import React from 'react';
-import Levels from "./Levels/Levels";
+import Dashboard from './Dashboard/Dashboard';
+import logo from './logo.svg';
+import './App.css';
+import Inventory from './Inventory/Inventory';
 
 function App() {
   return (
-    <Levels> </Levels>
+    <Inventory></Inventory>
   );
 }
 

@@ -3,7 +3,6 @@
     text-align: center;
     align-items: center;
     color: #414141;
-    /* font-family: 'Courier New', Courier, monospace; */
   }
   
   .quickOrder > form {
@@ -157,7 +156,7 @@
     flex-direction: row;
     margin-bottom: -27px;
     margin-top: -50px;
-    margin-right: 20px;
+    margin-right: 40px;
     align-items: center;
     justify-content: flex-end;
 
@@ -168,9 +167,9 @@
     padding-left: 20px;
     color: #4141416e;
   }
-  .sort {
+  
+  #sort {
     display: flex;
-    align-content: center;
     justify-content: flex-end;
     width: 135px;
     height: 20px;
@@ -193,22 +192,34 @@
     text-align: center;
     color: #414141;
     margin-top: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+
   }
-  
+
   .headers {
     font-size: 20px;
-    background-color: #ECE4E47A;
+    background-color:#4141410a;
     font-weight: 100;
   }
   
+  .headers > tr > th {
+    border: none;
+    
+  }
+
   .data {
     font-size: 20px;
+  }
+
+  .data > td {
+    border: none;
   }
   
   .inventoryButtons {
     display: flex;
     flex-direction: row;
-    margin-left: 50px;
+    margin-left: 10px;
   }
   
   .inventoryButtons > a {
@@ -226,7 +237,7 @@
   }
   
   .inventoryButtons >a:hover {
-    background: #A198987A;
+    background: #41414111;
     color: #414141;
     font-weight: bold;
   }

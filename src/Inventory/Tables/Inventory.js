@@ -66,7 +66,7 @@ class Inventory extends React.Component {
                         
                         <p className = "indicator">Sort By</p>
                         <select 
-                            className = "sort"
+                            id = "sort"
                             class = 'form-control'
                             onChange = {this.sortBy}
                             >
@@ -82,7 +82,7 @@ class Inventory extends React.Component {
                     <table>
                         
                         <thead className = 'headers'>
-                            <tr id = "table">
+                            <tr>
                                 <th style={{width:"150px", height: "35px"}}>Item</th>
                                 <th style={{width:"150px"}}>Current Quantity</th>
                                 <th style={{width:"150px"}}>Min Quantity</th>

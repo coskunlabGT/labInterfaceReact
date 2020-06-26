@@ -2,6 +2,7 @@ import React from 'react'
 import {API} from '../../Main/constants'
 
 
+
 class Orders extends React.Component {
     constructor() {
         super()
@@ -88,7 +89,7 @@ class Orders extends React.Component {
                         
                         <p className = "indicator">Sort By</p>
                         <select 
-                            className = "sort"
+                            id = "sort"
                             class = 'form-control'
                             onChange = {this.sortBy}
                             >

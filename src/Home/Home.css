@@ -1,0 +1,25 @@
+.home {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.left {
+    text-align: center;
+}
+
+#messages {
+    border: 5px solid;
+    padding: 10px;
+    height: 500px;
+    width: 700px;
+    margin-bottom: 0px;
+}
+
+#description {
+    margin-top: 0px;
+}
+
+#lab {
+    font-size: 100px;
+}

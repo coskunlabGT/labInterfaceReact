@@ -9,6 +9,7 @@ import Home from './Home/Home'
 
 import './Inventory/Inventory.css'
 import './Main/Main.css'
+import './Home/Home.css'
 
 function App() {
   return (

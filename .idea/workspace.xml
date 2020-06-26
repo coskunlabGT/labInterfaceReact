@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:upstream" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d05fa8af-a654-402c-9bc6-861a443f957a" name="Default Changelist" comment="removed notes section" />
+    <list id="a3ff1ad1-1336-43d6-a049-9cfb02c4724d" name="Revert &quot;added initial levels frontend&quot;" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/alfister/labInterfaceReact.git" />
+        <option value="https://github.com/coskunlabGT/labInterfaceReact.git" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1dkYy6ZUfH6DoYXeeZ2rYDg7P1E" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../labInterface1" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\allis\PycharmProjects\Git\LMI\labInterfaceReact\src" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d05fa8af-a654-402c-9bc6-861a443f957a" name="Default Changelist" comment="" />
+      <changelist id="a3ff1ad1-1336-43d6-a049-9cfb02c4724d" name="Revert &quot;added initial levels frontend&quot;" comment="" />
+      <created>1592970809701</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1592970809701</updated>
+      <workItem from="1592970812883" duration="643000" />
+      <workItem from="1592971552193" duration="820000" />
+      <workItem from="1592972469895" duration="8000" />
+      <workItem from="1592972572968" duration="26000" />
+      <workItem from="1593196452027" duration="7111000" />
+      <workItem from="1593394320039" duration="625000" />
+      <workItem from="1593529571623" duration="1188000" />
+      <workItem from="1594084013570" duration="177000" />
+      <workItem from="1594084641180" duration="827000" />
+      <workItem from="1594653461206" duration="681000" />
+      <workItem from="1594738780391" duration="768000" />
+      <workItem from="1595343740729" duration="1245000" />
+      <workItem from="1595345442921" duration="25000" />
+      <workItem from="1595345770087" duration="1662000" />
+      <workItem from="1595815115523" duration="698000" />
+    </task>
+    <task id="LOCAL-00001" summary="added initial levels frontend">
+      <created>1592971308732</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1592971308732</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Revert &quot;added initial levels frontend&quot;&#10;&#10;This reverts commit a0152059">
+      <created>1592971389128</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1592971389128</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Revert &quot;added initial levels frontend&quot;&#10;&#10;This reverts commit a0152059">
+      <created>1593205307037</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1593205307038</updated>
+    </task>
+    <task id="LOCAL-00004" summary="resolved merge conflict">
+      <created>1593207802641</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1593207802641</updated>
+    </task>
+    <task id="LOCAL-00005" summary="adjusted css for nav bar">
+      <created>1594653561100</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1594653561100</updated>
+    </task>
+    <task id="LOCAL-00006" summary="adjusted css for nav bar">
+      <created>1595814156645</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1595814156645</updated>
+    </task>
+    <task id="LOCAL-00007" summary="updated dependencies and resolved merge conflicts">
+      <created>1595814698981</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1595814698981</updated>
+    </task>
+    <task id="LOCAL-00008" summary="removed notes section">
+      <created>1595815711618</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1595815711618</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added initial levels frontend" />
+    <MESSAGE value="merged changes from upstream" />
+    <MESSAGE value="resolved merge conflict" />
+    <MESSAGE value="adjusted css for nav bar" />
+    <MESSAGE value="resolved merge conflicts" />
+    <MESSAGE value="updated dependencies and resolved merge conflicts" />
+    <MESSAGE value="removed notes section" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed notes section" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="692" y="90" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1595814954325">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="692" y="90" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1595814954325" />
+    <state x="226" y="0" key="CommitChangelistDialog2" timestamp="1592971387614">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="226" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1592971387614" />
+    <state x="742" y="98" key="FileChooserDialogImpl" timestamp="1595815576549">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="742" y="98" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1595815576549" />
+    <state x="448" y="253" key="GitRewordDialog" timestamp="1593205536091">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="448" y="253" key="GitRewordDialog/0.0.1280.680@0.0.1280.680" timestamp="1593205536091" />
+    <state width="594" height="163" key="GridCell.Tab.0.bottom" timestamp="1595814309035">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="594" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1595814309035" />
+    <state width="594" height="163" key="GridCell.Tab.0.center" timestamp="1595814309035">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="594" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1595814309035" />
+    <state width="594" height="163" key="GridCell.Tab.0.left" timestamp="1595814309034">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="594" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1595814309034" />
+    <state width="594" height="163" key="GridCell.Tab.0.right" timestamp="1595814309035">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="594" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1595814309035" />
+    <state x="122" y="51" key="MergeDialog" timestamp="1595815699070">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="122" y="51" key="MergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1595815699070" />
+    <state x="280" y="102" key="MultipleFileMergeDialog" timestamp="1595815701186">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="280" y="102" key="MultipleFileMergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1595815701186" />
+    <state x="448" y="255" key="VCS.ChangelistChooser" timestamp="1593205434666">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="448" y="255" key="VCS.ChangelistChooser/0.0.1280.680@0.0.1280.680" timestamp="1593205434666" />
+    <state x="234" y="74" key="Vcs.Push.Dialog.v2" timestamp="1595815780166">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="234" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1595815780166" />
+    <state x="448" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595814441031">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="448" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1595814441031" />
+    <state x="328" y="129" key="git4idea.merge.GitPullDialog" timestamp="1593207628567">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="328" y="129" key="git4idea.merge.GitPullDialog/0.0.1280.680@0.0.1280.680" timestamp="1593207628567" />
+    <state x="446" y="253" key="git4idea.rebase.GitUnstructuredEditor" timestamp="1593207067463">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="446" y="253" key="git4idea.rebase.GitUnstructuredEditor/0.0.1280.680@0.0.1280.680" timestamp="1593207067463" />
+  </component>
+</project>

@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import './Levels.css'
 import ReactPlayer from 'react-player';
 import CurrentReading from './LevelComponents/CurrentReading'
-import EditableText from './LevelComponents/EditableText'
 
 function Levels() {
     return (
@@ -17,7 +16,6 @@ function Levels() {
                     height='60%'
                     controls={true}
                 />
-                <EditableText/>
                 <ReactPlayer
                     url='https://www.youtube.com/watch?v=DDU-rZs-Ic4'
                     className='mid-player'
@@ -27,7 +25,6 @@ function Levels() {
                     height='60%'
                     controls={true}
                 />
-                <EditableText/>
                 <ReactPlayer
                     url = 'https://www.youtube.com/watch?v=9Auq9mYxFEE&list=PLU12uITxBEPHofmeOxlMA5zh11Nl1iB1E&index=7&t=0s'
                     className='right-player'
@@ -37,7 +34,6 @@ function Levels() {
                     height='60%'
                     controls={true}
                 />
-                <EditableText/>
             </div>
         </div>
     );

@@ -2,8 +2,7 @@ import React from 'react'
 import InputItem from './components/Item'
 import Quantity from './components/Quantity'
 import User from './components/User'
-
-import {LOCAL_HOST} from '../../Main/constants'
+import { Link } from 'react-router-dom'
 
 function FormComponent(props) {
     return(
@@ -26,7 +25,7 @@ function FormComponent(props) {
                 />
                 <div className = "buttons">
                     <button id = "submit" type = "submit">Submit</button>
-                    <a href = {LOCAL_HOST + "/inventory"} id = "back">Back</a>
+                    <Link to =  "/inventory" id = "back">Back</Link>
                 </div>
             </form>
              

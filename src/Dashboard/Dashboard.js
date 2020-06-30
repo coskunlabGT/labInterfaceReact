@@ -32,7 +32,7 @@ export default class Dashboard extends Component {
     fetch(link, data)
     .then(response => response.json())  // promise
     .then(response => {
-        this.setState({selectedUserDashboard: response});
+        this.setState({selectedUserDashboard: [response]});
         console.log(this.state)
     }).catch(err => {
         this.setState({selectedUserDashboard: []});

@@ -2,10 +2,10 @@ import React from 'react'
 
 function Item(props) {
     return (
-        <div className = "dropDown">
+        <div className = "input">
             <h3 className = "label">Item</h3>
             <select 
-                id = "inventory"
+                id = "item"
                 name = "item_id" 
                 value = {props.item_id}
                 onChange = {props.handleChange}

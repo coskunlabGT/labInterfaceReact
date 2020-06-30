@@ -11,12 +11,12 @@ th, td {
 
 p, div, th {
     color: #414141;
-    font-family: "Courier New";
+    /* font-family: "Courier New"; */
 }
 
 h1 {
     color: #414141;
-    font-family: "Courier New";
+    /* font-family: "Courier New"; */
     size: 30;
 }
 

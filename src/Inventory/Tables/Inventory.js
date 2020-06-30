@@ -1,5 +1,6 @@
 import React from 'react'
-import {API, LOCAL_HOST} from '../../Main/constants'
+import { Link } from 'react-router-dom'
+import { API } from '../../Main/constants'
 
 class Inventory extends React.Component {
     constructor() {
@@ -111,8 +112,8 @@ class Inventory extends React.Component {
                     </table>
                     
                     <div className = "inventoryButtons">
-                        <a href = {LOCAL_HOST + "/inventory/quickOrder"}>Quick Order</a>
-                        <a href = {LOCAL_HOST + "/inventory/orders"}>Order History</a>
+                        <Link to = "/inventory/quickOrder">Quick Order</Link>
+                        <Link to = "/inventory/orders">Order History</Link>
                     </div>
                 
                 </div>

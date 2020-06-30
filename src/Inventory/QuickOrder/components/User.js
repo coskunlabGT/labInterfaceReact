@@ -5,7 +5,7 @@ function User(props) {
         <div className = "input">
             <h3 className = "label">Name</h3>
             <select 
-                id = "inputUser"
+                id = "user"
                 name = "user" 
                 value = {props.user}
                 onChange = {props.handleChange}>

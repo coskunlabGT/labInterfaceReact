@@ -5,7 +5,7 @@ function Home() {
         <div className = "home">
             <div className = "left">
                 <h1 id = "lab">Coskun Lab</h1>
-                <h3 id = "description">Single Cell Biotechnology Laboratory</h3>
+                <h3 id = "description"> Single Cell Biotechnology Laboratory</h3>
             </div>
             <div>
                 <p id = "messages">Announcements</p>

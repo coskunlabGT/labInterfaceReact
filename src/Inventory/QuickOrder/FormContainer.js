@@ -1,6 +1,7 @@
 import React from 'react'
 import {API, LOCAL_HOST} from '../../Main/constants'
 import FormComponent from './FormComponent'
+import { Link } from 'react-router-dom'
 
 class Form extends React.Component {
     constructor() {
@@ -65,8 +66,7 @@ class Form extends React.Component {
         fetch(link,data)
         .then(response => {console.log(response)})
         .catch(error => {console.log(error)})
-
-        window.location = {LOCAL_HOST}.LOCAL_HOST + "/orders"
+        window.location = {LOCAL_HOST}.LOCAL_HOST + "/inventory/orders"
     }
 
     render() {

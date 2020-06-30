@@ -6,12 +6,13 @@ import Inventory from './Inventory/Tables/Inventory'
 import Navbar from './Main/Navbar'
 import FormContainer from './Inventory/QuickOrder/FormContainer'
 import Home from './Home/Home'
-import Dashboard from './Dashboard/Dashboard';
+import Dashboard from './Dashboard/Dashboard'
+import Levels from "./Levels/Levels";
+
 
 import './Inventory/Inventory.css'
 import './Main/Main.css'
 import './Home/Home.css'
-
 
 function App() {
   return (
@@ -36,7 +37,7 @@ function App() {
             </Route>
 
             <Route path = '/levels'>
-
+              <Levels />
             </Route>
 
             <Route path = '/calender'>

@@ -1,2 +1,2 @@
-export const API = 'http://127.0.0.1:8000'
-export const LOCAL_HOST = 'http://localhost:3000'
+export const API = 'http://lab-env.eba-4ca78nem.us-west-2.elasticbeanstalk.com'
+export const LOCAL_HOST = 'https://master.d2x2ldpv5rdax5.amplifyapp.com/'

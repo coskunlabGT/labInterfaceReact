@@ -12,7 +12,7 @@ textarea {
   border-radius: 5px;
   outline: none;
   background-color: #EBDDDD;
-  padding: 12px 20px 12px 20px;
+  padding: 12px 20px;
   font-family: Courier New;
   color: #8C7C7C;
 }
@@ -21,6 +21,6 @@ textarea {
   position: absolute;
   font: 32px Courier New;
   color: #8C7C7C;
-  top: 40px;
-  left: 140px;
+  top: 95px;
+  left: 115px;
 }

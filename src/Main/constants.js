@@ -1,2 +1,2 @@
-export const API = 'http://lab-env.eba-4ca78nem.us-west-2.elasticbeanstalk.com'
-export const LOCAL_HOST = 'http://master.d2x2ldpv5rdax5.amplifyapp.com/'
+export const API = 'http://django-env.eba-ug8ruwff.us-east-1.elasticbeanstalk.com'
+export const LOCAL_HOST = 'localhost:3000'

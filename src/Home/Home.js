@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 function Home() {
     return (
         <div className = "home">
@@ -8,7 +7,6 @@ function Home() {
                 <h1 id = "lab">Coskun Lab</h1>
                 <h3 id = "description"> Single Cell Biotechnology Laboratory</h3>
             </div>
-
         </div>
     )
 }

@@ -15,6 +15,7 @@ L10n.load({
         },
     }
   });
+  //App
   
 class App extends React.Component {
     constructor() {

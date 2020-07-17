@@ -161,7 +161,6 @@
     width: 135px;
     height: 20px;
     border-radius: 3px;
-
   }
   
   #filter {
@@ -186,7 +185,7 @@
 
   .headers {
     font-size: 20px;
-    background-color:#4141410a;
+    background-color:#41414100;
     font-weight: 100;
   }
   

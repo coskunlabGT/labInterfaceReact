@@ -56,10 +56,9 @@ class Orders extends React.Component {
 
     sortBy(event) {
         let selected = event.target.value.split(":")
-        console.log(selected)
-        let arrayCopy = this.state.order[0]
+        let arrayCopy = this.state.filtered[0]
         arrayCopy.sort(this.compareBy(selected[0], selected[1]))
-        this.setState({order: [arrayCopy]})
+        this.setState({filtered: [arrayCopy]})
     }
 
     filterBy(event) {
@@ -90,11 +89,11 @@ class Orders extends React.Component {
                         <p className = "indicator">Sort By</p>
                         <select 
                             id = "sort"
-                            class = 'form-control'
+                            className = 'form-control'
                             onChange = {this.sortBy}
                             >
-                            <option value = "order_date:1">Newest to Oldest</option>
-                            <option value = "order_date:2">Oldest to Newest</option>
+                            <option value = "order_date:1">Oldest to Newest</option>
+                            <option value = "order_date:2">Newest to Oldest</option>
                             <option value = "order_name:1">A to Z</option>
                             <option value = "order_name:2">Z to A</option>
                         </select>
@@ -102,7 +101,7 @@ class Orders extends React.Component {
                         <p className = "indicator">Filter</p>
                         <select 
                             id = "filter"
-                            class = 'form-control'
+                            className = 'form-control'
                             onChange = {this.filterBy}
                             >
                             <option value = "all">All Orders</option>

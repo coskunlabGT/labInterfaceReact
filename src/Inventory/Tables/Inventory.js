@@ -68,9 +68,9 @@ class Inventory extends React.Component {
                         <p className = "indicator">Sort By</p>
                         <select 
                             id = "sort"
-                            class = 'form-control'
+                            className = 'form-control'
                             onChange = {this.sortBy}
-                            >
+                        >
                             <option value = "item_name:1">A to Z</option>
                             <option value = "item_name:2">Z to A</option>
                             <option value = "refill_needed:2">Refill Needed</option>

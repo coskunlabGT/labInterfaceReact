@@ -1,7 +1,6 @@
 import React from 'react'
 import {API, LOCAL_HOST} from '../../Main/constants'
 import FormComponent from './FormComponent'
-import { Link } from 'react-router-dom'
 
 class Form extends React.Component {
     constructor() {

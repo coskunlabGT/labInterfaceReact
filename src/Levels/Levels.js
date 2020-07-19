@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './Levels.css'
 import ReactPlayer from 'react-player';
 import CurrentReading from './LevelComponents/CurrentReading'

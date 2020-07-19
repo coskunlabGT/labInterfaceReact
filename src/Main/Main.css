@@ -17,6 +17,7 @@
     padding: 10px;
     padding-left: 15px;
     padding-right: 15px;
+    color: #414141;
   }
 
   .tab:visited {
@@ -25,12 +26,9 @@
   
   .tab:hover {
     font-weight: bold;
-    /* color: rgb(195, 171, 171); */
   }
 
   .tab.active {
     font-weight: bold;
-    /* color: rgb(195, 171, 171); */
-
   }
   

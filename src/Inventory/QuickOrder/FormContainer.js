@@ -3,7 +3,6 @@ import {API} from '../../Main/constants'
 import FormComponent from './FormComponent'
 import { withRouter } from 'react-router-dom';
 
-
 class Form extends React.Component {
     constructor(props) {
         super(props)

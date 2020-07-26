@@ -57,6 +57,13 @@ class Inventory extends React.Component {
         this.setState({order: [arrayCopy]})
     }
 
+    convertText(refill_needed) {
+        if (refill_needed) {
+            return "Yes"
+        }
+        return "No"
+    }
+
     render() {
         return (
             <div>
@@ -101,7 +108,7 @@ class Inventory extends React.Component {
                                                         <td style = {{height: "70px"}}>{item_name}</td>
                                                         <td>{current_quantity}</td>
                                                         <td>{min_quantity}</td>
-                                                        <td>{refill_needed.toString()}</td>
+                                                        <td>{this.convertText(refill_needed)}</td>
                                                     </tr>
                                                 )
                                         })

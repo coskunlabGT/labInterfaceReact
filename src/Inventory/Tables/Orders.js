@@ -72,7 +72,7 @@ class Orders extends React.Component {
                 arrayCopy.push(item)
             if (selected === "past" && item.status === "Delivered")
                 arrayCopy.push(item)
-            if (selected === "void" && (item.status === "Declined" || item.status === "Cancelled"))
+            if (selected === "inactive" && (item.status === "Declined" || item.status === "Cancelled"))
                 arrayCopy.push(item)
         })
         this.setState({filtered: [arrayCopy]})
@@ -107,7 +107,7 @@ class Orders extends React.Component {
                             <option value = "all">All Orders</option>
                             <option value = "current">Current Orders</option>
                             <option value = "past">Past Orders</option>
-                            <option value = "void">Void Requests</option>
+                            <option value = "inactive">Inactive Orders</option>
                         </select>
                     
                     </div>

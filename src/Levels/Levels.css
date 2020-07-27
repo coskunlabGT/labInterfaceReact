@@ -12,7 +12,7 @@ textarea {
   border-radius: 5px;
   outline: none;
   background-color: #EBDDDD;
-  padding: 12px 20px;
+  padding: 12px 20px 12px 20px;
   font-family: Courier New;
   color: #8C7C7C;
 }

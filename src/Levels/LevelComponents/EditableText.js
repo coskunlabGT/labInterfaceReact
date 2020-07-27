@@ -17,8 +17,8 @@ class EditableText extends Component {
     render () {
         return <form>
             <textarea
-                rows={3}
-                cols={29}
+                rows={3} //change to relative size
+                cols={29} //change to relative size
                 value={this.state.value}
                 onChange={this.handleChange}
                 placeholder="Notes"

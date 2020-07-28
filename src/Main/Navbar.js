@@ -27,7 +27,7 @@ function Navbar() {
                <NavLink
                     activeClassName = "active"
                     className = "tab"
-                    to = "/calender"
+                    to = "/calendar"
                 >Calendar</NavLink>
                 
                 <NavLink

@@ -1,15 +1,17 @@
 import React, {Component} from 'react';
 import './Dashboard.css';
+import {API} from '../Main/constants'
+
 
 export default class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedUser: "N/A",
+      selectedUser: "",
       selectedUserId: 0,
       selectedUserDashboard: [],
       allUsers: [],
-      researchDisplayCurrent: "all"
+      researchDisplayCurrent: "All Research"
     }
   }
 
@@ -19,7 +21,7 @@ export default class Dashboard extends Component {
 
   getResearch() {
 
-    const link = 'http://127.0.0.1:8000/UserManagement/get-Dashboard/';
+    const link = {API}.API + '/UserManagement/get-Dashboard/';
     let data = {
         method: 'POST',
         headers: {
@@ -33,27 +35,36 @@ export default class Dashboard extends Component {
     .then(response => response.json())  // promise
     .then(response => {
         this.setState({selectedUserDashboard: response});
-        console.log(this.state)
+        console.log(response)
     }).catch(err => {
         this.setState({selectedUserDashboard: []});
     })
   }
 
   getUser() {
-    const link = 'http://127.0.0.1:8000/UserManagement/get-Users/';
+    const link = {API}.API + '/UserManagement/get-Users/';
     let data = {
         method: 'GET',
     }
     fetch(link, data)
     .then(response => response.json())  // promise
     .then(response => {
-        this.setState({allUsers: response})
+        this.setState({allUsers: [{value: '', display: ''}].concat(response)})
     }).catch(err => {
       console.log(err)
     })
   }
 
   findUserId(name) {
+    if (name === "") {
+      this.setState({
+        selectedUser: "",
+        selectedUserId: 0,
+        selectedUserDashboard: [],
+
+      })
+    }
+
     this.state.allUsers.forEach(element => {
       if(element["name"] === name) {
           this.state.selectedUserId =  element["id"];
@@ -68,55 +79,56 @@ export default class Dashboard extends Component {
   }
 
   displayResearch (element) {
-    if(this.state.researchDisplayCurrent == "all") {
+    if(this.state.researchDisplayCurrent == "All Research") {
         return(<tr key={element['id']}>
-      <th>{element["name"]}</th>
-      <th><a href={element["description"]}>Google Doc</a></th>
-      <th>{element["due_date"]}</th>
-      <th>{element["approved"] == true ? "true" : "false"}</th>
+          <td>{element["name"]}</td>
+          <td><a href={element["description"]}>Google Doc</a></td>
+          <td>{element["due_date"]}</td>
+          <td>{element["approved"]}</td>
       </tr>)
-    } else if (this.state.researchDisplayCurrent == "current" && element["approved"] == true) {
+    } else if (this.state.researchDisplayCurrent == "Current Research" && element["approved"] == true) {
       return(<tr key={element['id']}>
-      <th>{element["name"]}</th>
-      <th><a href={element["description"]}>Google Doc</a></th>
-      <th>{element["due_date"]}</th>
-      <th>true</th>
+        <td>{element["name"]}</td>
+        <td><a href={element["description"]}>Google Doc</a></td>
+        <td>{element["due_date"]}</td>
+        <td>true</td>
       </tr>)
-    } else if (element["approved"] == false) {
-  return(<tr key={element['id']}>
-    <th>{element["name"]}</th>
-    <th><a href={element["description"]}>Google Doc</a></th>
-    <th>{element["due_date"]}</th>
-    <th>false</th>
-    </tr>)
+    } else  {
+      return(
+        <tr key={element['id']}>
+          <td>{element["name"]}</td>
+          <td><a href={element["description"]}>Google Doc</a></td>
+          <td>{element["due_date"]}</td>
+          <td>{element["approved"]}</td>
+        </tr>)
     }
   }
 
   render() {
     return (
       <div className="Main">
-          <div>
-            <h1>Student Name: {this.state.selectedUser}</h1>
-            <div>
-                <div>List of all Users</div>
-                <select onChange={(option) => {
+          <div className = "left">
+            <h1>Student: {this.state.selectedUser}</h1>
+            <div className = "panel">
+                {/* <div>List of all Users</div> */}
+                <select id = "dropdown" onChange={(option) => {
                   this.findUserId(option.target.value);
                 }}>
                     {this.state.allUsers.map(element => {return <option key={element.id}>{element.name}</option>})}
                 </select>
-                <div>
-                  <button onMouseDown={() => this.changeResearchDisplay("current")}>Current Research</button>
+               <div>
+                  <button onMouseDown={() => this.changeResearchDisplay("Current Research")}>Current Research</button>
                 </div>
                 <div>
-                  <button onMouseDown={() => this.changeResearchDisplay("future")}>Future Research</button>
+                  <button onMouseDown={() => this.changeResearchDisplay("Future Research")}>Future Research</button>
                 </div>
                 <div>
-                  <button onMouseDown={() => this.changeResearchDisplay("all")}>Deadlines</button>
+                  <button onMouseDown={() => this.changeResearchDisplay("All Research")}>Deadlines</button>
                 </div>
             </div>
           </div>
           <div className="outline">
-            <h1>Current Research</h1>
+            <h1>{this.state.researchDisplayCurrent}</h1>
             <table>
               <tbody>
                 <tr>
@@ -127,6 +139,7 @@ export default class Dashboard extends Component {
                 </tr>
                 {this.state.selectedUserDashboard.map(element =>
                 {
+                  console.log(element)
                   return(this.displayResearch(element));
                 })}
               </tbody>

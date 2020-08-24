@@ -1,7 +1,8 @@
 import React from 'react'
 import './Levels.css'
 import ReactPlayer from 'react-player';
-import CurrentReading from './LevelComponents/CurrentReading'
+import CurrentReading from './LevelComponents/CurrentReading';
+
 
 function Levels() {
     return (

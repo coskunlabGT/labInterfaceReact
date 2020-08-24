@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { API } from '../../Main/constants'
 
 class CurrentReading extends Component {
     constructor(props) {
@@ -20,7 +21,7 @@ class CurrentReading extends Component {
     }
 
     getLatestReading() {
-        fetch("http://127.0.0.1:8000/get_latest/")
+        fetch(API + '/LevelFeature/get_latest/')
             .then(res => res.json())
             .then(
                 (result) => {

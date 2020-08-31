@@ -18,9 +18,20 @@
     margin-top: -60px;
     margin-left: 15px;
     color: #4141414f;
+    font-size: 20px;
+    font-weight: 400;
 }
 
 #lab {
-    font-size: 90px;
+    font-size: 130px;
+    text-shadow: 3px 3px #8C7C7C;
 }
+
+#credit {
+    margin-top: 120px;
+    font-size: 18px;
+    font-weight: 300;
+    color: #8C7C7C;
+}
+
 

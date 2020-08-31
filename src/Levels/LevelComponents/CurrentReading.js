@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import {API} from '../../Main/constants'
+import { API } from '../../Main/constants'
+
 
 class CurrentReading extends Component {
     constructor(props) {
@@ -21,7 +22,7 @@ class CurrentReading extends Component {
     }
 
     getLatestReading() {
-        fetch({API}.API + "/LevelFeature/get_latest/")
+        fetch(API + '/LevelFeature/get_latest/')
             .then(res => res.json())
             .then(
                 (result) => {

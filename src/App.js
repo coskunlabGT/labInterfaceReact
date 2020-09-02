@@ -9,6 +9,16 @@ import FormContainer from './Inventory/QuickOrder/FormContainer'
 import Home from './Home/Home'
 import Dashboard from './Dashboard/Dashboard'
 import Levels from "./Levels/Levels";
+import Calendar from "./Calendar/Schedule";
+
+import "../node_modules/@syncfusion/ej2-base/styles/material.css";
+import "../node_modules/@syncfusion/ej2-buttons/styles/material.css";
+import "../node_modules/@syncfusion/ej2-calendars/styles/material.css";
+import "../node_modules/@syncfusion/ej2-dropdowns/styles/material.css";
+import "../node_modules/@syncfusion/ej2-inputs/styles/material.css";
+import "../node_modules/@syncfusion/ej2-navigations/styles/material.css";
+import "../node_modules/@syncfusion/ej2-popups/styles/material.css";
+import "../node_modules/@syncfusion/ej2-schedule/styles/material.css";
 
 
 import './Inventory/Inventory.css'
@@ -43,7 +53,7 @@ function App() {
               </Route>
 
               <Route exact path = '/calendar'>
-
+                <Calendar/>
               </Route>
 
               <Route exact path = '/dashboards'>

@@ -1,26 +1,37 @@
 .home {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
+    margin-top: -20px;
 }
 
 .left {
     text-align: center;
+    /* margin-left: 40px; */
 }
 
-#messages {
-    border: 5px solid;
-    padding: 10px;
-    height: 500px;
-    width: 700px;
-    margin-bottom: 0px;
+.right {
+    text-align: center;
+    margin: 15px 25px;
 }
 
 #description {
-    margin-top: -50px;
+    margin-top: -60px;
+    margin-left: 15px;
     color: #4141414f;
+    font-size: 20px;
+    font-weight: 400;
 }
 
 #lab {
-    font-size: 100px;
+    font-size: 130px;
+    text-shadow: 3px 3px #8C7C7C;
 }
+
+#credit {
+    margin-top: 120px;
+    font-size: 18px;
+    font-weight: 300;
+    color: #8C7C7C;
+}
+
+

@@ -17,6 +17,7 @@
     padding: 10px;
     padding-left: 15px;
     padding-right: 15px;
+    color: #414141;
   }
 
   .tab:visited {
@@ -25,12 +26,40 @@
   
   .tab:hover {
     font-weight: bold;
-    /* color: rgb(195, 171, 171); */
   }
 
   .tab.active {
     font-weight: bold;
-    /* color: rgb(195, 171, 171); */
-
   }
   
+
+  .error {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .error > h1 {
+    margin: 15px;
+    font-size: 90px;
+  }
+
+  .error > p {
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 25px;
+
+  }
+
+#link {
+  text-decoration: none;
+  margin-bottom: 15px;
+  color: #414141;
+  font-weight: bold;
+  font-size: 20px;
+  }
+
+  #link:hover {
+    color: #4141417c;
+  }

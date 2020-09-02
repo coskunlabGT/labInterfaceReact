@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { API } from '../../Main/constants'
+
 
 class CurrentReading extends Component {
     constructor(props) {
@@ -20,7 +22,7 @@ class CurrentReading extends Component {
     }
 
     getLatestReading() {
-        fetch("http://127.0.0.1:8000/get_latest/")
+        fetch(API + '/LevelFeature/get_latest/')
             .then(res => res.json())
             .then(
                 (result) => {
@@ -46,7 +48,7 @@ class CurrentReading extends Component {
         } else if (!isLoaded) {
             return <div className={'device-update'}>Loading...</div>;
         } else {
-            const rvalue = JSON.stringify(this.state.reading, ['reading_value']);
+            const rvalue = JSON.stringify(reading, ['reading_value']);
 
             return (
                 <div>

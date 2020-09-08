@@ -40,7 +40,7 @@ function App() {
               <Levels />
             </Route>
 
-            <Route path = '/calender'>
+            <Route path = '/calendar'>
 
             </Route>
 

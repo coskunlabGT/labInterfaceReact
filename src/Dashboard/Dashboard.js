@@ -23,7 +23,7 @@ export default class Dashboard extends Component {
 
     const link = {API}.API + '/UserManagement/get-Dashboard/';
     let data = {
-        method: 'POST',
+        method: 'GET',
         headers: {
           'Content-Type': 'application/json',
         },

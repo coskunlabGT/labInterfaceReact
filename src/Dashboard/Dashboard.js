@@ -20,16 +20,13 @@ export default class Dashboard extends Component {
   }
 
   getResearch() {
-
-    const link = {API}.API + '/UserManagement/get-Dashboard/';
+   	//const link = {API}.API + '/UserManagement/get-Dashboard/';
+    const link =  'http://127.0.0.1:8000/UserManagement/get-Dashboard/?user_id=' + this.state.selectedUserId;
     let data = {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          "user_id": this.state.selectedUserId
-        })
+        }
     }
     fetch(link, data)
     .then(response => response.json())  // promise
@@ -38,6 +35,7 @@ export default class Dashboard extends Component {
         console.log(response)
     }).catch(err => {
         this.setState({selectedUserDashboard: []});
+        console.log(err)
     })
   }
 

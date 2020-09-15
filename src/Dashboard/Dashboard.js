@@ -20,8 +20,7 @@ export default class Dashboard extends Component {
   }
 
   getResearch() {
-   	//const link = {API}.API + '/UserManagement/get-Dashboard/';
-    const link =  'http://127.0.0.1:8000/UserManagement/get-Dashboard/?user_id=' + this.state.selectedUserId;
+    const link =  {API}.API + '/UserManagement/get-Dashboard/?user_id=' + this.state.selectedUserId;
     let data = {
         method: 'GET',
         headers: {
@@ -35,7 +34,6 @@ export default class Dashboard extends Component {
         console.log(response)
     }).catch(err => {
         this.setState({selectedUserDashboard: []});
-        console.log(err)
     })
   }
 

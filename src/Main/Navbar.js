@@ -11,25 +11,31 @@ function Navbar() {
                     className = "tab"
                     to = "/"
                 >Home</NavLink>
-                    
+
+                <NavLink
+                    activeClassName = 'active'
+                    className = 'tab'
+                    to = '/overview'
+                >Overview</NavLink>
+
                 <NavLink
                     activeClassName = "active"
                     className = "tab"
                     to = "/inventory"
-                >Inventory</NavLink>  
-                
+                >Inventory</NavLink>
+
                 <NavLink
                     activeClassName = "active"
                     className = "tab"
                     to = "/levels"
                 >Levels</NavLink>
-               
+
                <NavLink
                     activeClassName = "active"
                     className = "tab"
                     to = "/calendar"
                 >Calendar</NavLink>
-                
+
                 <NavLink
                     activeClassName = "active"
                     className = "tab"

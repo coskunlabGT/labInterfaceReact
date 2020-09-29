@@ -1,13 +1,24 @@
 import React from 'react';
-import { Route, BrowserRouter } from  'react-router-dom'
+import { Route, BrowserRouter, Switch } from  'react-router-dom'
 
 import Orders from './Inventory/Tables/Orders'
 import Inventory from './Inventory/Tables/Inventory'
 import Navbar from './Main/Navbar'
+import PageNotFound from './Main/PageNotFound'
 import FormContainer from './Inventory/QuickOrder/FormContainer'
 import Home from './Home/Home'
 import Dashboard from './Dashboard/Dashboard'
 import Levels from "./Levels/Levels";
+import Calendar from "./Calendar/Schedule";
+
+import "../node_modules/@syncfusion/ej2-base/styles/material.css";
+import "../node_modules/@syncfusion/ej2-buttons/styles/material.css";
+import "../node_modules/@syncfusion/ej2-calendars/styles/material.css";
+import "../node_modules/@syncfusion/ej2-dropdowns/styles/material.css";
+import "../node_modules/@syncfusion/ej2-inputs/styles/material.css";
+import "../node_modules/@syncfusion/ej2-navigations/styles/material.css";
+import "../node_modules/@syncfusion/ej2-popups/styles/material.css";
+import "../node_modules/@syncfusion/ej2-schedule/styles/material.css";
 
 
 import './Inventory/Inventory.css'
@@ -20,33 +31,39 @@ function App() {
       <BrowserRouter>
           <div>
             <Navbar />
-            <Route exact path = '/'>
-              <Home />
-            </Route>
+            <Switch>
+              <Route exact path = '/'>
+                <Home />
+              </Route>
 
-            <Route exact path = '/inventory'>
-              <Inventory />
-            </Route>
+              <Route exact path = '/inventory'>
+                <Inventory />
+              </Route>
 
-            <Route path = '/inventory/quickOrder'>
-              <FormContainer />
-            </Route>
+              <Route exact path = '/inventory/quickOrder'>
+                <FormContainer />
+              </Route>
 
-            <Route path = '/inventory/orders'>
-              <Orders />
-            </Route>
+              <Route exact path = '/inventory/orders'>
+                <Orders />
+              </Route>
 
-            <Route path = '/levels'>
-              <Levels />
-            </Route>
+              <Route exact path = '/levels'>
+                <Levels />
+              </Route>
 
-            <Route path = '/calendar'>
+              <Route exact path = '/calendar'>
+                <Calendar/>
+              </Route>
 
-            </Route>
+              <Route exact path = '/dashboards'>
+                <Dashboard />
+              </Route>
 
-            <Route path = '/dashboards'>
-              <Dashboard />
-            </Route>
+              <Route path = '*'>
+                <PageNotFound />
+              </Route>
+            </Switch>
           </div>
       </BrowserRouter>
     </div>

@@ -83,7 +83,7 @@ export default class Dashboard extends Component {
         return(<tr key={element['id']}>
           <td>{element["name"]}</td>
           <td><a href={element["description"]}>Google Doc</a></td>
-          <td>{element["due_date"]}</td>
+          <td>{new Date(element["due_date"]).toLocaleDateString}</td>
           <td>{element["approved"]}</td>
       </tr>)
     } else if (this.state.researchDisplayCurrent == "Current Research" && element["approved"] == true) {

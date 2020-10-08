@@ -1,1 +1,1 @@
-export const API = 'http://django-env.eba-ug8ruwff.us-east-1.elasticbeanstalk.com'
+export const API = ' https://sou6g8iib0.execute-api.us-west-1.amazonaws.com/dev'

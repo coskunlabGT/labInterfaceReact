@@ -15,8 +15,8 @@ function Navbar() {
                 <NavLink
                     activeClassName = 'active'
                     className = 'tab'
-                    to = '/overview'
-                >Overview</NavLink>
+                    to = '/login'
+                >Login</NavLink>
 
                 <NavLink
                     activeClassName = "active"

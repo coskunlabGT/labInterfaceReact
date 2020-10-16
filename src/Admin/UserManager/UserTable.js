@@ -68,6 +68,11 @@ class UserTable extends React.Component {
                 <div className = "heading">
                     <h1 className = "title">Users</h1>
                     <div className = "arrange">
+                        <div className = "actions">
+                            <Link to = "/admin/messages">Add</Link>
+                            <Link to = "/admin/inventory">Update</Link>
+                            <Link to = "/admin/users">Delete</Link>
+                        </div>
                         <p className = "indicator">Sort By</p>
                         <select 
                             id = "sort"

@@ -1,0 +1,88 @@
+    .admin {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .admin > form {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        color: #414141;
+    }
+
+    #form-title {
+        display: inline-block;
+        justify-content: center;
+        margin-top: 60px;
+        margin-bottom: 35px;
+        font-size: 45px;
+        font-weight: 500;
+        background-color: #414141;
+        color: #ffffff;
+        width: 250px;
+        padding: 10px;
+        border-radius: 12px;
+    }
+
+    /*.label from quickOrder*/
+    /*.buttons, #submit, and #back from quickOrder*/
+
+    .admin-input {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #ECE4E47A;
+        height: 60px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-radius: 12px;
+        margin-bottom: 25px;
+    }
+
+    #name, #role, #email, #phone,
+    #item-name, #curr-quantity, #min-quantity {
+        border: none;
+        text-align: center;
+        font-size: 18px;
+        height: 30px;
+        padding-left: 5px;
+        padding-right: 5px;
+        color: #414141;
+    }
+
+    /*user manager form*/
+
+    #name {
+        width: 135px;
+        height: 30px;
+    }
+
+    #role {
+        width: 145px;
+    }
+
+    #email {
+        width: 140px;
+    }
+
+    #phone {
+        width: 135px;
+    }
+
+    /*inventory manager form*/
+
+    #item-name {
+        width: 170px;
+    }
+
+    #curr-quantity {
+        width: 55px;
+        padding-right: 0px;
+    }
+
+    #min-quantity {
+        width: 60px;
+        padding-right: 0px;
+    }

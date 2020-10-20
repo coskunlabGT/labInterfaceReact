@@ -7,14 +7,17 @@ class InventoryTable extends React.Component {
         super()
         this.state = {
             items: [],
-            loading: false
+            selectedItem: "",
+            selectedButton: ""
         }
         this.compareBy = this.compareBy.bind(this)
         this.sortBy = this.sortBy.bind(this)
+        this.onChange = this.onChange.bind(this)
+        this.onSubmit = this.onSubmit.bind(this)
+        this.onButtonChange = this.onButtonChange.bind(this)
     }
 
     componentDidMount() {
-        this.setState({loading: true})
         let inventoryLink = {API}.API + '/QuickOrder/inventory/'
         let data = {
             method: 'GET',
@@ -25,10 +28,10 @@ class InventoryTable extends React.Component {
                 this.setState({
                     items: [response],
                 })
-                console.log(this.state.items)
             }).catch(error => {
                 console.log(error)
             })
+            
 
     }
 
@@ -57,76 +60,109 @@ class InventoryTable extends React.Component {
         this.setState({order: [arrayCopy]})
     }
 
+    onChange(event) {
+        this.setState({ selectedUser: event.target.value})
+    }
+
+    onSubmit(event) {
+        event.preventDefault()
+        let button = this.state.selectedButton
+        if (button == 'add') {
+
+        }
+        if (button == 'update') {
+        }
+        if (button == 'delete') {
+        }
+        // const link = {API}.API+ '/QuickOrder/add-order/'
+        // const data = {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //     },
+        //     body: JSON.stringify(this.state)
+        // }
+
+        // fetch(link,data)
+        // .then(response => {console.log(response)})
+        // .catch(error => {console.log(error)})
+        // this.props.history.push('../inventory')
+        console.log(this.state.selectedButton);
+    }
+
+    onButtonChange(event) {
+        this.setState({ selectedButton: event.target.value})
+    }
 
     render() {
         return (
             <div>
-
-                <div className = "heading">
-                    <h1 className = "title">Inventory Items</h1>
-                    <div className = "arrange">
-                        <div className = "actions">
-                            <Link to = "/admin/messages">Add</Link>
-                            <Link to = "/admin/inventory">Update</Link>
-                            <Link to = "/admin/users">Delete</Link>
-                        </div>
-                        <p className = "indicator">Sort By</p>
-                        <select 
-                            id = "sort"
-                            className = 'form-control'
-                            onChange = {this.sortBy}
-                        >
-                            <option value = "item_name:1">A to Z</option>
-                            <option value = "item_name:2">Z to A</option>
-                        </select>
-                    
-                    </div>
-                </div>
-                
-                <div className = "table">
-                    <table>
+                <form onSubmit = {this.onSubmit}>
+                    <div className = "heading">
+                        <h1 className = "title">Inventory Items</h1>
+                        <div className = "arrange">
+                            <div className = "actions">
+                                <button button value = "add" onClick = {this.onButtonChange} type = "submit">Add</button>
+                                <button value = "update" onClick = {this.onButtonChange} type = "submit">Update</button>
+                                <button value = "delete" onClick = {this.onButtonChange} type = "submit">Delete</button>
+                                </div>
+                            <p className = "indicator">Sort By</p>
+                            <select 
+                                id = "sort"
+                                className = 'form-control'
+                                onChange = {this.sortBy}
+                            >
+                                <option value = "item_name:1">A to Z</option>
+                                <option value = "item_name:2">Z to A</option>
+                            </select>
                         
-                        <thead className = 'headers'>
-                            <tr>
-                                <th style={{width:"10px", height: "35px"}}> </th>
-                                <th style={{width:"150px", height: "35px"}}>Item</th>
-                                <th style={{width:"150px"}}>Current Quantity</th>
-                                <th style={{width:"150px"}}>Min Quantity</th>
-                            </tr>
-                            </thead>
+                        </div>
+                    </div>
+                    
+                    <div className = "table">
+                        <table>
                             
-                            <tbody>
-                                {this.state.items.map(inventory => {
-                                    return(
-                                        inventory.map((item, index) => {
-                                            const {id, item_name, current_quantity, min_quantity} = item
-                                            return(
-                                                <tr key = {index} className = "data">
-                                                    <td style = {{height: "70px"}}>
-                                                        <input type = "radio" name = "name"
-                                                            value = {id}
-                                                            // onChange = {}
-                                                        />
-                                                    </td>
-                                                    <td>{item_name}</td>
-                                                    <td>{current_quantity}</td>
-                                                    <td>{min_quantity}</td>
-                                                </tr>
-                                                )
-                                        })
-                                    )
-                                })}
+                            <thead className = 'headers'>
+                                <tr>
+                                    <th style={{width:"10px", height: "35px"}}> </th>
+                                    <th style={{width:"150px", height: "35px"}}>Item</th>
+                                    <th style={{width:"150px"}}>Current Quantity</th>
+                                    <th style={{width:"150px"}}>Min Quantity</th>
+                                </tr>
+                                </thead>
                                 
-                            </tbody>
-                    
-                    </table>
-                    
-                    <div className = "inventoryButtons">
+                                <tbody>
+                                    {this.state.items.map(inventory => {
+                                        return(
+                                            inventory.map((item, index) => {
+                                                const {id, item_name, current_quantity, min_quantity} = item
+                                                return(
+                                                    <tr key = {index} className = "data">
+                                                        <td style = {{height: "70px"}}>
+                                                            <input type = "radio" name = "name"
+                                                                value = {id}
+                                                                checked = {this.state.selectedItem == id}
+                                                                onChange = {this.onChange}
+                                                            />
+                                                        </td>
+                                                        <td>{item_name}</td>
+                                                        <td>{current_quantity}</td>
+                                                        <td>{min_quantity}</td>
+                                                    </tr>
+                                                    )
+                                            })
+                                        )
+                                    })}
+                                    
+                                </tbody>
+                        
+                        </table>                
+                    </div>
+                </form>
+                <div className = "inventoryButtons">
                         <Link to = "/admin/messages">Messages</Link>
                         <Link to = "/admin/inventory">Inventory</Link>
                         <Link to = "/admin/users">Users</Link>
-                    </div>
-                
                 </div>
             </div>
         )

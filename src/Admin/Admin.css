@@ -1,0 +1,12 @@
+  /* Admin Table Actions */
+  .actions > button {
+    text-decoration: none;
+    color: #414141;
+    background: none;
+    width: auto;
+  }
+
+  .actions > button:hover {
+    text-decoration: underline;
+    border: none;
+  }

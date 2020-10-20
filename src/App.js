@@ -26,6 +26,8 @@ import "../node_modules/@syncfusion/ej2-schedule/styles/material.css";
 import './Inventory/Inventory.css'
 import './Main/Main.css'
 import './Home/Home.css'
+import './Admin/Admin.css'
+
 
 function App() {
   return (

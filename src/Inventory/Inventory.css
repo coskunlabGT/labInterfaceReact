@@ -227,14 +227,3 @@
     font-weight: bold;
   }
   
-
-  /* Admin Table Actions */
-  .actions > a {
-    padding-left: 10px;
-    text-decoration: none;
-    color: #414141;
-  }
-
-  .actions > a:hover {
-    text-decoration: underline;
-  }

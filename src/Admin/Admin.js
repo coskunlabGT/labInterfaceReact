@@ -1,7 +1,9 @@
 import React from 'react'
+import { Route, BrowserRouter, Switch } from  'react-router-dom'
 import { API } from '../Main/constants'
 import InventoryTable from './InventoryManager/InventoryTable'
 import UserTable from './UserManager/UserTable'
+
 
 
 class Admin extends React.Component {
@@ -110,25 +112,30 @@ class Admin extends React.Component {
     render() {
         return (
             <div>
-                <InventoryTable 
-                    compareBy = {this.compareBy}
-                    sortBy = {this.sortBy}
-                    onChange = {this.onChange}
-                    onSubmit = {this.onSubmit}
-                    onButtonChange = {this.onButtonChange}
-                    items = {this.state.items}
-                    selectedButton = {this.selectedButton}
-                />
-
-                <UserTable
-                    compareBy = {this.compareBy}
-                    sortBy = {this.sortBy}
-                    onChange = {this.onChange}
-                    onSubmit = {this.onSubmit}
-                    onButtonChange = {this.onButtonChange}
-                    users = {this.state.users}
-                    selectedButton = {this.selectedButton}
-                />
+                <BrowserRouter>
+                    <Route exact path = '/admin/inventory'>
+                        <InventoryTable 
+                            compareBy = {this.compareBy}
+                            sortBy = {this.sortBy}
+                            onChange = {this.onChange}
+                            onSubmit = {this.onSubmit}
+                            onButtonChange = {this.onButtonChange}
+                            items = {this.state.items}
+                            selectedButton = {this.selectedButton}
+                        />
+                    </Route>
+                    <Route exact path = '/admin/users'>
+                        <UserTable
+                            compareBy = {this.compareBy}
+                            sortBy = {this.sortBy}
+                            onChange = {this.onChange}
+                            onSubmit = {this.onSubmit}
+                            onButtonChange = {this.onButtonChange}
+                            users = {this.state.users}
+                            selectedButton = {this.selectedButton}
+                        />
+                    </Route>
+                </BrowserRouter>
 
             </div>
         )

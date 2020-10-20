@@ -10,3 +10,30 @@
     text-decoration: underline;
     border: none;
   }
+
+  .adminButtons {
+      margin-left: 35px;
+      margin-bottom: 30px;
+      margin-top: 20px;
+  }
+
+  /* admin page buttons */
+  .adminButtons > a {
+    text-decoration: none;
+    margin-top: 20px;
+    margin-right: 25px;
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    background: #414141;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 50px;
+  }
+  
+  .adminButtons > a:hover {
+    background: #41414111;
+    color: #414141;
+    font-weight: bold;
+  }

@@ -10,8 +10,7 @@ import Home from './Home/Home'
 import Dashboard from './Dashboard/Dashboard'
 import Levels from "./Levels/Levels";
 import Calendar from "./Calendar/Schedule";
-import InventoryTable from './Admin/InventoryManager/InventoryTable'
-import UserTable from './Admin/UserManager/UserTable'
+import Admin from "./Admin/Admin"
 
 import "../node_modules/@syncfusion/ej2-base/styles/material.css";
 import "../node_modules/@syncfusion/ej2-buttons/styles/material.css";
@@ -64,17 +63,14 @@ function App() {
                 <Dashboard />
               </Route>
 
-              <Route exact path = '/admin/inventory'>
-                <InventoryTable />
-              </Route>
-
-              <Route exact path = '/admin/users'>
-                <UserTable />
+              <Route path = '/admin'>
+                <Admin />
               </Route>
 
               <Route path = '*'>
                 <PageNotFound />
               </Route>
+
             </Switch>
           </div>
       </BrowserRouter>

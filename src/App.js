@@ -10,6 +10,7 @@ import Home from './Home/Home'
 import Dashboard from './Dashboard/Dashboard'
 import Levels from "./Levels/Levels";
 import Calendar from "./Calendar/Schedule";
+import Admin from "./Admin/Admin"
 
 import "../node_modules/@syncfusion/ej2-base/styles/material.css";
 import "../node_modules/@syncfusion/ej2-buttons/styles/material.css";
@@ -24,6 +25,8 @@ import "../node_modules/@syncfusion/ej2-schedule/styles/material.css";
 import './Inventory/Inventory.css'
 import './Main/Main.css'
 import './Home/Home.css'
+import './Admin/Admin.css'
+
 
 function App() {
   return (
@@ -60,9 +63,14 @@ function App() {
                 <Dashboard />
               </Route>
 
+              <Route path = '/admin'>
+                <Admin />
+              </Route>
+
               <Route path = '*'>
                 <PageNotFound />
               </Route>
+
             </Switch>
           </div>
       </BrowserRouter>

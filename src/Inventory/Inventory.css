@@ -221,7 +221,7 @@
     margin-top: 50px;
   }
   
-  .inventoryButtons >a:hover {
+  .inventoryButtons > a:hover {
     background: #41414111;
     color: #414141;
     font-weight: bold;

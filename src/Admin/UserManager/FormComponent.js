@@ -29,7 +29,7 @@ function FormComponent(props) {
                 />
                 <div className = "buttons">
                     <button id = "submit" type = "submit">Submit</button>
-                    <Link to =  "/" id = "back">Back</Link>
+                    <Link to =  "/admin/users" id = "back">Back</Link>
                 </div>
             </form>
         </div>

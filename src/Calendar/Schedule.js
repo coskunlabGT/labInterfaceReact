@@ -5,6 +5,12 @@ import { DataManager, WebApiAdaptor } from "@syncfusion/ej2-data";
 class Schedule extends React.Component {
     constructor() {
         super(...arguments);
+        this.state={
+          bool: false
+
+        };
+        this.componentDidMount = this.componentDidMount.bind(this);
+
         this.flag = true;
         this.calendarId = "coskunlab2020@gmail.com";
         this.publicKey = "AIzaSyA1YD4ToEnVXKpWjkoR6trkcolFkU9BvMI";
@@ -18,21 +24,54 @@ class Schedule extends React.Component {
           crossDomain: true
         });
       }
-      componentDidMount(){
-        let signin=document.getElementById("signin");
-        signin.addEventListener("click", ()=>{
-          window.window.gapi.client.load("calendar", "v3", function() {
-            var SCOPES = "https://www.googleapis.com/auth/calendar";
-            window.window.gapi.auth.authorize({
-              client_id:"144532264238-umvg7klioo3mgkpjl3u7n0a35n33t6jl.apps.googleusercontent.com",// use your client id generated 
-              scope: SCOPES,
-              immediate: false
-            });
-          });
-        });
-      }
-      onDataBinding(e) {
 
+      componentDidMount(){
+        
+        
+        var SCOPES = "https://www.googleapis.com/auth/calendar";
+        let self = this;
+        window.window.gapi.load("auth2",function(){
+          window.window.gapi.auth2.init({
+
+            client_id: "144532264238-umvg7klioo3mgkpjl3u7n0a35n33t6jl.apps.googleusercontent.com",
+            scope: SCOPES,
+          });
+          var GoogleAuth=window.window.gapi.auth2.getAuthInstance();
+
+          let signin=document.getElementById("signin");
+        signin.addEventListener("click", ()=>{
+        GoogleAuth.signIn().then(response=>{
+          if(response.getBasicProfile().getEmail()!="coskunlab2020@gmail.com"){
+            alert("Your google account is not of CoskunLabs. Try Again.");
+            GoogleAuth.signOut()
+          }
+
+
+        });
+        
+
+        });
+        GoogleAuth.isSignedIn.listen((signedin)=>{
+          if(signedin){
+            self.setState({ bool: true})
+          }
+          else{
+            self.setState({bool:false})
+
+          }
+        
+        });
+        
+        });
+
+       
+        
+      }
+
+     
+
+      onDataBinding(e) {
+        
         this.flag = false;
         var items = e.result.items;
         var scheduleData = [];
@@ -148,6 +187,7 @@ class Schedule extends React.Component {
               <div className="control-wrapper drag-sample-wrapper">             
                 <div className="schedule-container">
                   <ScheduleComponent
+                    readonly={this.state.bool==true ? false : true}
                     ref={schedule => (this.scheduleObj = schedule)}
                     width="100%"
                     height="650px"

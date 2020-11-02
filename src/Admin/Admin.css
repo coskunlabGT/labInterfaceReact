@@ -49,6 +49,7 @@
         height: 30px;
         padding-left: 5px;
         padding-right: 5px;
+        margin-left: 5px;
         color: #414141;
     }
 
@@ -74,7 +75,7 @@
     /*inventory manager form*/
 
     #item-name {
-        width: 170px;
+        width: 175px;
     }
 
     #curr-quantity {
@@ -86,6 +87,8 @@
         width: 60px;
         padding-right: 0px;
     }
+
+
   /* Admin Table Actions */
   .actions > button {
     text-decoration: none;
@@ -99,29 +102,47 @@
     border: none;
   }
 
+  
+  /* admin page buttons */
+
   .adminButtons {
       margin-left: 35px;
-      margin-bottom: 30px;
       margin-top: 20px;
+      margin-bottom: -15px;
   }
 
-  /* admin page buttons */
   .adminButtons > a {
     text-decoration: none;
-    margin-top: 20px;
-    margin-right: 25px;
+    margin-right: 20px;
     padding: 8px;
-    border: none;
     border-radius: 8px;
-    background: #414141;
-    color: #ffffff;
+    background: #41414111;
+    color:#414141;
     font-size: 18px;
-    font-weight: 500;
-    margin-top: 50px;
+    font-weight: bold;
   }
   
   .adminButtons > a:hover {
+    background: #414141;
+    color: #ffffff;
+  }
+
+  .actionButtons {
+      margin: -40px;
+      margin-top: -30px;
+      padding: 0px;
+  }
+
+  .actionButtons > button {
+      width: 80px;
+      background: none;
+      border: solid 3px  #41414111;
+      color: #414141;
+      padding: 10px;
+  }
+
+  .actionButtons > button:hover {
     background: #41414111;
     color: #414141;
-    font-weight: bold;
-  }
+    border: none;
+}

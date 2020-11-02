@@ -10,7 +10,10 @@ import Home from './Home/Home'
 import Dashboard from './Dashboard/Dashboard'
 import Levels from "./Levels/Levels";
 import Calendar from "./Calendar/Schedule";
-import Admin from "./Admin/Admin"
+import InventoryTable from './Admin/InventoryManager/InventoryTable'
+import UserTable from './Admin/UserManager/UserTable'
+import AdminUserForm from "./Admin/UserManager/AdminUserForm"
+import AdminInventoryForm from "./Admin/InventoryManager/AdminInventoryForm"
 
 import "../node_modules/@syncfusion/ej2-base/styles/material.css";
 import "../node_modules/@syncfusion/ej2-buttons/styles/material.css";
@@ -63,8 +66,20 @@ function App() {
                 <Dashboard />
               </Route>
 
-              <Route path = '/admin'>
-                <Admin />
+              <Route exact path = '/admin/inventory'>
+                <InventoryTable />
+              </Route>
+
+              <Route exact path = '/admin/users'>
+                  <UserTable />
+              </Route>
+
+              <Route exact path = '/admin/users/form'>
+                  <AdminUserForm />
+              </Route>
+
+              <Route exact path = '/admin/inventory/form'>
+                  <AdminInventoryForm />
               </Route>
 
               <Route path = '*'>

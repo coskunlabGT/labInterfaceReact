@@ -13,7 +13,7 @@ class GoogleBtn extends Component {
       isLogined: props.isLogined,
       accessToken: '',
     };
-    console.log(this.state)
+    // console.log(this.state)
 
     this.login = this.login.bind(this);
     this.handleLoginFailure = this.handleLoginFailure.bind(this);
@@ -22,8 +22,8 @@ class GoogleBtn extends Component {
   }
 
   login (response) {
-    this.props.setLoggedIn();
     if(response.accessToken){
+      this.props.setLoggedIn(response.accessToken);
       this.setState(state => ({
         isLogined: true,
         accessToken: response.accessToken
@@ -32,6 +32,7 @@ class GoogleBtn extends Component {
   }
 
   logout (response) {
+    // console.log(this.state)
     this.props.setLoggedOut();
     this.setState(state => ({
       isLogined: false,
@@ -66,7 +67,6 @@ class GoogleBtn extends Component {
           responseType='code,token'
         />
       }
-      { this.state.accessToken ? <h5>Your Access Token: <br/><br/> { this.state.accessToken }</h5> : null }
 
     </div>
     )

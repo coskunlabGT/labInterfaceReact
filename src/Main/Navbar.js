@@ -1,16 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import GoogleBtn from '../GoogleBtn.js'
 
 function Navbar() {
+    const [isLogined, setIsLogined] = useState(false);
+    const [accessToken, setAccessToken] = useState(null);
+    const setLoggedIn = token => {
+      setIsLogined(true);
+      setAccessToken(token);
+      console.log(accessToken);
+    }
+    const setLoggedOut = () => {
+      setAccessToken(null);
+      setIsLogined(false);
+      console.log(accessToken);
+    }
     return (
         <div>
             <nav className = "navbar">
-              <NavLink
-                  exact
-                  activeClassName = "active"
-                  className = "tab"
-                  to = "/login"
-              >Login</NavLink>
+                <GoogleBtn isLogined={isLogined} setLoggedIn={setLoggedIn} setLoggedOut={setLoggedOut} />
                 <NavLink
                     exact
                     activeClassName = "active"
@@ -21,31 +29,31 @@ function Navbar() {
                 <NavLink
                     activeClassName = 'active'
                     className = 'tab'
-                    to = '/home'
+                    to = {isLogined ? '/home' : '/'}
                 >NewHome</NavLink>
 
                 <NavLink
                     activeClassName = "active"
                     className = "tab"
-                    to = "/inventory"
+                    to = {isLogined ? "/inventory" : '/'}
                 >Inventory</NavLink>
 
                 <NavLink
                     activeClassName = "active"
                     className = "tab"
-                    to = "/levels"
+                    to = {isLogined ? "/levels" : '/'}
                 >Levels</NavLink>
 
                <NavLink
                     activeClassName = "active"
                     className = "tab"
-                    to = "/calendar"
+                    to = {isLogined ? "/calendar" : '/'}
                 >Calendar</NavLink>
 
                 <NavLink
                     activeClassName = "active"
                     className = "tab"
-                    to = "/dashboards"
+                    to = {isLogined ? "/dashboards" : '/'}
                 >Dashboards</NavLink>
 
             </nav>

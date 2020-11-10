@@ -11,7 +11,6 @@ import Dashboard from './Dashboard/Dashboard'
 import Levels from "./Levels/Levels";
 import Calendar from "./Calendar/Schedule";
 import InteractiveHomePage from './InteractiveHomePage';
-import LoginPage from './LoginPage';
 
 import "../node_modules/@syncfusion/ej2-base/styles/material.css";
 import "../node_modules/@syncfusion/ej2-buttons/styles/material.css";
@@ -64,10 +63,6 @@ function App() {
 
               <Route exact path = '/dashboards'>
                 <Dashboard />
-              </Route>
-
-              <Route exact path = '/login'>
-                <LoginPage />
               </Route>
 
               <Route path = '*'>

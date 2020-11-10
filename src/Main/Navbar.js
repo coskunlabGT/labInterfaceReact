@@ -5,6 +5,12 @@ function Navbar() {
     return (
         <div>
             <nav className = "navbar">
+              <NavLink
+                  exact
+                  activeClassName = "active"
+                  className = "tab"
+                  to = "/login"
+              >Login</NavLink>
                 <NavLink
                     exact
                     activeClassName = "active"
@@ -15,8 +21,8 @@ function Navbar() {
                 <NavLink
                     activeClassName = 'active'
                     className = 'tab'
-                    to = '/login'
-                >Login</NavLink>
+                    to = '/home'
+                >NewHome</NavLink>
 
                 <NavLink
                     activeClassName = "active"

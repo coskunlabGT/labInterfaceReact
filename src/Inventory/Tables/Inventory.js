@@ -7,7 +7,6 @@ class Inventory extends React.Component {
         super()
         this.state = {
             items: [],
-            quantity: [],
             loading: false
         }
         this.compareBy = this.compareBy.bind(this)
@@ -17,7 +16,6 @@ class Inventory extends React.Component {
     componentDidMount() {
         this.setState({loading: true})
         let inventoryLink = {API}.API + '/QuickOrder/inventory/'
-        let quantityLink = {API}.API + '/QuickOrder/statusQuantity/'
         let data = {
             method: 'GET',
         }
@@ -30,16 +28,6 @@ class Inventory extends React.Component {
             }).catch(error => {
                 console.log(error)
             })
-        fetch(quantityLink, data)
-        .then(response => response.json())
-        .then(response => {
-            this.setState({
-                quantity: [response],
-            })
-            console.log(this.state.quantity)
-        }).catch(error => {
-            console.log(error)
-        })
 
     }
 
@@ -116,7 +104,7 @@ class Inventory extends React.Component {
                                 {this.state.items.map(inventory => {
                                     return(
                                         inventory.map((item, index) => {
-                                            const {id, item_name, current_quantity, min_quantity, refill_needed} = item
+                                            const {item_name, current_quantity, min_quantity, refill_needed} = item
                                             return(
                                                 <tr key = {index} className = "data">
                                                     <td style = {{height: "70px"}}>{item_name}</td>

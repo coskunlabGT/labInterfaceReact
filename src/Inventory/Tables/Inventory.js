@@ -10,8 +10,8 @@ class Inventory extends React.Component {
             quantity: [],
             loading: false
         }
-        // this.compareBy = this.compareBy.bind(this)
-        // this.sortBy = this.sortBy.bind(this)
+        this.compareBy = this.compareBy.bind(this)
+        this.sortBy = this.sortBy.bind(this)
     }
 
     componentDidMount() {
@@ -43,30 +43,30 @@ class Inventory extends React.Component {
 
     }
 
-    // compareBy(key, sort) {
-    //     return function (a, b) {
-    //         if (sort === "1") {
-    //             if (a[key] < b[key])
-    //                 return -1
-    //             if (a[key] > b[key])
-    //                 return 1
-    //         }
-    //         if (sort === "2") {
-    //             if (a[key] < b[key])
-    //                 return 1
-    //             if (a[key] > b[key])
-    //                 return -1 
-    //         }
-    //         return 0
-    //     }
-    // }
+    compareBy(key, sort) {
+        return function (a, b) {
+            if (sort === "1") {
+                if (a[key] < b[key])
+                    return -1
+                if (a[key] > b[key])
+                    return 1
+            }
+            if (sort === "2") {
+                if (a[key] < b[key])
+                    return 1
+                if (a[key] > b[key])
+                    return -1 
+            }
+            return 0
+        }
+    }
 
-    // sortBy(event) {
-    //     let selected = event.target.value.split(":")
-    //     let arrayCopy = this.state.items[0]
-    //     arrayCopy.sort(this.compareBy(selected[0], selected[1]))
-    //     this.setState({order: [arrayCopy]})
-    // }
+    sortBy(event) {
+        let selected = event.target.value.split(":")
+        let arrayCopy = this.state.items[0]
+        arrayCopy.sort(this.compareBy(selected[0], selected[1]))
+        this.setState({order: [arrayCopy]})
+    }
 
     convertText(refill_needed) {
         if (refill_needed) {
@@ -85,7 +85,7 @@ class Inventory extends React.Component {
                 </div>
                 <div className = "heading">
                     <h1 className = "title">Inventory Items</h1>
-                    {/* <div className = "arrange">
+                    <div className = "arrange">
                         <p className = "indicator">Sort By</p>
                         <select 
                             id = "sort"
@@ -97,7 +97,7 @@ class Inventory extends React.Component {
                             <option value = "refill_needed:2">Refill Needed</option>
                         </select>
                     
-                    </div> */}
+                    </div>
                 </div>
                 
                 <div className = "table">
@@ -109,8 +109,6 @@ class Inventory extends React.Component {
                                 <th style={{width:"150px"}}>Current Quantity</th>
                                 <th style={{width:"150px"}}>Min Quantity</th>
                                 <th style={{width:"150px"}}>Refill Needed</th>
-                                <th style={{width:"150px"}}>Pending Quantity</th>
-                                <th style={{width:"150px"}}>Approved Quantity</th>
                             </tr>
                             </thead>
                             
@@ -125,11 +123,6 @@ class Inventory extends React.Component {
                                                     <td>{current_quantity}</td>
                                                     <td>{min_quantity}</td>
                                                     <td>{this.convertText(refill_needed)}</td>
-                                                    <td>{this.state.quantity[0][index][1]}</td>
-                                                    <td>{this.state.quantity[0][index][2]}</td>
-                                                                                                    
-                                                        
-
                                                     </tr>
                                                 )
                                         })

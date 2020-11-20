@@ -1,6 +1,6 @@
 import React from 'react'
 
-function CurrentQuantity() {
+function CurrentQuantity(props) {
     return (
         <div className="admin-input">
             <h3 className="label">Current Quantity</h3>
@@ -9,6 +9,8 @@ function CurrentQuantity() {
                 type="number"
                 name="current_quantity"
                 min="0"
+                value = {props.current_quantity}
+                onChange = {props.handleChange}
             />
         </div>
     )

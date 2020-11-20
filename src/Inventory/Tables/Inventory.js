@@ -27,7 +27,6 @@ class Inventory extends React.Component {
                 this.setState({
                     items: [response],
                 })
-                console.log(this.state.items)
             }).catch(error => {
                 console.log(error)
             })
@@ -37,6 +36,7 @@ class Inventory extends React.Component {
             this.setState({
                 quantity: [response],
             })
+            console.log(this.state.quantity)
         }).catch(error => {
             console.log(error)
         })
@@ -79,7 +79,10 @@ class Inventory extends React.Component {
     render() {
         return (
             <div>
-
+                <div className = "inventoryButtons">
+                    <Link to = "/inventory/quickOrder">Quick Order</Link>
+                    <Link to = "/inventory/orders">Order History</Link>
+                </div>
                 <div className = "heading">
                     <h1 className = "title">Inventory Items</h1>
                     {/* <div className = "arrange">
@@ -115,15 +118,15 @@ class Inventory extends React.Component {
                                 {this.state.items.map(inventory => {
                                     return(
                                         inventory.map((item, index) => {
-                                            const {item_name, current_quantity, min_quantity, refill_needed} = item
+                                            const {id, item_name, current_quantity, min_quantity, refill_needed} = item
                                             return(
                                                 <tr key = {index} className = "data">
                                                     <td style = {{height: "70px"}}>{item_name}</td>
                                                     <td>{current_quantity}</td>
                                                     <td>{min_quantity}</td>
                                                     <td>{this.convertText(refill_needed)}</td>
-                                                    <td>{this.state.quantity[0][index][0]}</td>
                                                     <td>{this.state.quantity[0][index][1]}</td>
+                                                    <td>{this.state.quantity[0][index][2]}</td>
                                                                                                     
                                                         
 
@@ -138,11 +141,6 @@ class Inventory extends React.Component {
                             </tbody>
                     
                     </table>
-                    
-                    <div className = "inventoryButtons">
-                        <Link to = "/inventory/quickOrder">Quick Order</Link>
-                        <Link to = "/inventory/orders">Order History</Link>
-                    </div>
                 
                 </div>
             </div>

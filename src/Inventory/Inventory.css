@@ -204,26 +204,23 @@
   .inventoryButtons {
     display: flex;
     flex-direction: row;
-    margin-left: 10px;
+    margin-left: 40px;
+    margin-bottom: -15px;
+
   }
   
   .inventoryButtons > a {
     text-decoration: none;
-    margin-top: 20px;
-    margin-right: 25px;
+    margin-right: 20px;
     padding: 8px;
-    border: none;
     border-radius: 8px;
-    background: #414141;
-    color: #ffffff;
-    font-size: 18px;
-    font-weight: 500;
-    margin-top: 50px;
-  }
-  
-  .inventoryButtons > a:hover {
     background: #41414111;
-    color: #414141;
+    color:#414141;
+    font-size: 18px;
     font-weight: bold;
   }
   
+  .inventoryButtons > a:hover {
+    background: #414141;
+    color: #ffffff;
+  }

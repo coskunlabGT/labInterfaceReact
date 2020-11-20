@@ -11,7 +11,7 @@ function FormComponent(props) {
             <h1 id="form-title">Add Item</h1>
             <form onSubmit = {props.handleSubmit}>
                 <Item
-                    item_id = {props.data.item_id}
+                    item_name = {props.data.item_name}
                     handleChange = {props.handleChange}
                 />
                 <CurrentQuantity

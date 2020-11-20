@@ -12,7 +12,7 @@ function FormComponent(props) {
             <h1 id="form-title">Add User</h1>
             <form onSubmit = {props.handleSubmit}>
                 <UserName
-                    name = {props.data.username}
+                    name = {props.data.user_name}
                     handleChange = {props.handleChange}
                 />
                 <Role

@@ -1,7 +1,9 @@
+import { select } from '@syncfusion/ej2-base'
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom' 
 import { API } from '../../Main/constants'
 
+export let selected_id = ""
 
 class UserTable extends React.Component {
     constructor(props) {
@@ -64,37 +66,28 @@ class UserTable extends React.Component {
         this.setState({ selectedQuery: event.target.value})
     }
 
-    onSubmit(event) {
+    async onSubmit(event) {
         event.preventDefault()
         let button = this.state.selectedButton
 
-        if (button === 'add') {
+        if (button === 'add' && this.state.selectedQuery === "") {
             this.props.history.push('./users/form')
         }
-        if (button === 'update') {
-            const link =  {API}.API + '/UserManagement/get-Users/?user_id=' + this.state.selectedQuery;
+        if (button === 'update' && this.state.selectedQuery !== "") {
+            selected_id = this.state.selectedQuery
+            this.props.history.push('./users/form')
+        }
+
+        if (button === 'delete' && this.state.selectedQuery !== "") {
+            const link = {API}.API+ '/UserManagement/delete-User/?user_id=' + this.state.selectedQuery
             let data = {
-                method: 'GET',
-                headers: {
-                  'Content-Type': 'application/json',
-                }
+                method: 'DELETE',
             }
-            fetch(link, data)
-            .then(response => response.json())
-            .then(response => {
-                this.setState({
-                    user: [response],
-                })
-                console.log(response)
-            }).catch(error => {
+            await fetch(link, data)
+            .then().catch(error => {
                 console.log(error)
             })
-
-            this.props.history.push('./users/form')
-        }
-
-        if (button === 'delete') {
-
+            window.location.reload();
         }
     }
 

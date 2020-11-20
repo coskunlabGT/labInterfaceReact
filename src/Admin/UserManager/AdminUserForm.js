@@ -2,6 +2,7 @@ import React from 'react'
 import {API} from '../../Main/constants'
 import FormComponent from './FormComponent'
 import { withRouter } from 'react-router-dom';
+import { selected_id } from './UserTable'
 
 class Form extends React.Component {
     constructor(props) {
@@ -17,7 +18,29 @@ class Form extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    componentDidMount() { //for edit
+    componentDidMount() {
+        const link =  {API}.API + '/UserManagement/get-Users/?user_id=' + selected_id
+        let data = {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json',
+            }
+        }
+        fetch(link, data)
+        .then(response => response.json())
+        .then(response => {
+            this.setState({
+                user_name: response.name,
+                role: response.role,
+                email: response.email,
+                phone: response.phone_number,
+            })
+            console.log(response)
+        }).catch(error => {
+            console.log(error)
+        })
+        console.log(this.state)
+
 
     }
 
@@ -51,6 +74,12 @@ class Form extends React.Component {
                 body: JSON.stringify(this.state)
             }
         }
+        this.setState({
+            user_name: "",
+            role: "",
+            email: "",
+            phone: "",
+        })
     }
 
     render() {

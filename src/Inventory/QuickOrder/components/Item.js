@@ -9,6 +9,7 @@ function Item(props) {
                 name = "item_id" 
                 value = {props.item_id}
                 onChange = {props.handleChange}
+                required
             >
                 {props.items.map(item => (
                     <option 

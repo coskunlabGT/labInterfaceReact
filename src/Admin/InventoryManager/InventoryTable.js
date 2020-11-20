@@ -2,6 +2,8 @@ import React from 'react'
 import {  Link, withRouter } from 'react-router-dom'
 import { API } from '../../Main/constants'
 
+export let selected_id = ""
+
 class InventoryTable extends React.Component {
     constructor(props) {
         super(props)
@@ -65,32 +67,27 @@ class InventoryTable extends React.Component {
         this.setState({ selectedQuery: event.target.value})
     }
 
-    onSubmit(event) {
+    async onSubmit(event) {
         event.preventDefault()
         let button = this.state.selectedButton
 
-        if (button === 'add') {
+        if (button === 'add' && this.state.selectedQuery === "") {
             this.props.history.push('./inventory/form')
         }
-        if (button === 'update') {
-            const link = {API}.API+ '/QuickOrder/get-item/' + this.state.selectedQuery + '/'
-            let data = {
-                method: 'GET',
-            }
-            fetch(link, data)
-            .then(response => response.json())
-            .then(response => {
-                this.setState({
-                    item: [response],
-                })
-            }).catch(error => {
-                console.log(error)
-            })
-            console.log(this.state.item)
+        if (button === 'update' && this.state.selectedQuery !== "") {
+            selected_id = this.state.selectedQuery
             this.props.history.push ('./inventory/form')
         }
-        if (button === 'delete') {
-
+        if (button === 'delete' && this.state.selectedQuery !== "") {
+            const link = {API}.API+ '/QuickOrder/delete-item/' + this.state.selectedQuery + '/'
+            let data = {
+                method: 'DELETE',
+            }
+            await fetch(link, data)
+            .then().catch(error => {
+                console.log(error)
+            })
+            window.location.reload();
         }
     }
 
@@ -137,7 +134,7 @@ class InventoryTable extends React.Component {
                                     <th style={{width:"10px", height: "35px"}}> </th>
                                     <th style={{width:"150px"}}>Item</th>
                                     <th style={{width:"150px"}}>Current Quantity</th>
-                                    <th style={{width:"150px"}}>Min Quantity</th>
+                                    <th style={{width:"150px"}}>Minimum Quantity</th>
                                 </tr>
                                 </thead>
                                 

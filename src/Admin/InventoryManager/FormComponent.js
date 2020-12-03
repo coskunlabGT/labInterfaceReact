@@ -2,13 +2,12 @@ import React from 'react'
 import Item from './components/Item'
 import CurrentQuantity from "./components/CurrentQuantity"
 import MinQuantity from "./components/MinQuantity"
-import Admin from '../Admin.css'
 import { Link } from 'react-router-dom'
 
 function FormComponent(props) {
     return(
         <div className="admin">
-            <h1 id="form-title">Add Item</h1>
+            <h1 id="form-title">{props.data.page_type} Item</h1>
             <form onSubmit = {props.handleSubmit}>
                 <Item
                     item_name = {props.data.item_name}

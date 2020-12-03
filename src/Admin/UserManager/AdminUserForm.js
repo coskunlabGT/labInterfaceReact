@@ -2,7 +2,7 @@ import React from 'react'
 import {API} from '../../Main/constants'
 import FormComponent from './FormComponent'
 import { withRouter } from 'react-router-dom';
-import { selected_id } from './UserTable'
+import { selected_id, page_type } from './UserTable'
 
 class Form extends React.Component {
     constructor(props) {
@@ -12,7 +12,7 @@ class Form extends React.Component {
             role: "",
             email: "",
             phone: "",
-            page_type: ""
+            page_type: page_type,
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -26,6 +26,7 @@ class Form extends React.Component {
               'Content-Type': 'application/json',
             }
         }
+        
         fetch(link, data)
         .then(response => response.json())
         .then(response => {
@@ -40,8 +41,6 @@ class Form extends React.Component {
             console.log(error)
         })
         console.log(this.state)
-
-
     }
 
     handleChange(event) {

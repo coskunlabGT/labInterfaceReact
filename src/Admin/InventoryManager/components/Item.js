@@ -10,7 +10,6 @@ function Item(props) {
                 name="item_name"
                 value = {props.item_name}
                 onChange = {props.handleChange}
-
             />
         </div>
     )

@@ -2,7 +2,7 @@ import React from 'react'
 import {API} from '../../Main/constants'
 import FormComponent from './FormComponent'
 import { withRouter } from 'react-router-dom';
-import { selected_id } from './InventoryTable'
+import { selected_id, page_type } from './InventoryTable'
 
 
 class Form extends React.Component {
@@ -13,13 +13,13 @@ class Form extends React.Component {
             item_name: "",
             current_quantity: "",
             min_quantity: "",
-            page_type: ""
+            page_type: page_type,
     }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    async componentDidMount() { //for edit
+    async componentDidMount() {
         const link = {API}.API+ '/QuickOrder/get-item/' + selected_id + '/'
         let data = {
             method: 'GET',
@@ -38,7 +38,6 @@ class Form extends React.Component {
                 console.log(error)
             })
             console.log(this.state)
-
     }
 
     handleChange(event) {

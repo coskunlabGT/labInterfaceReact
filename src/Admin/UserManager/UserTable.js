@@ -4,6 +4,7 @@ import { Link, withRouter } from 'react-router-dom'
 import { API } from '../../Main/constants'
 
 export let selected_id = ""
+export let page_type = ""
 
 class UserTable extends React.Component {
     constructor(props) {
@@ -71,10 +72,12 @@ class UserTable extends React.Component {
         let button = this.state.selectedButton
 
         if (button === 'add' && this.state.selectedQuery === "") {
+            page_type = "Add"
             this.props.history.push('./users/form')
         }
         if (button === 'update' && this.state.selectedQuery !== "") {
             selected_id = this.state.selectedQuery
+            page_type = "Update"
             this.props.history.push('./users/form')
         }
 
@@ -91,6 +94,10 @@ class UserTable extends React.Component {
         }
     }
 
+    refresh() {
+        window.location.reload();
+    }
+
     onButtonChange(event) {
         this.setState({ selectedButton: event.target.value})
     }
@@ -99,7 +106,6 @@ class UserTable extends React.Component {
         return (
             <div>
                 <div className = "adminButtons">
-                    {/* <Link to = "/admin/messages">Messages</Link> */}
                     <Link to = "/admin/inventory">Inventory</Link>
                     <Link to = "/admin/users">Users</Link>
                 </div>
@@ -109,6 +115,7 @@ class UserTable extends React.Component {
                         <h1 className = "title">Users</h1>
                         <div className = "arrange">
                             <div className = "actions">
+                                <button value = "clear" onClick = {this.refresh}>Clear</button>
                                 <button value = "add" onClick = {this.onButtonChange} type = "submit">Add</button>
                                 <button value = "update" onClick = {this.onButtonChange} type = "submit">Edit</button>
                                 <button value = "delete" onClick = {this.onButtonChange} type = "submit">Delete</button>
@@ -132,11 +139,11 @@ class UserTable extends React.Component {
                             
                             <thead className = 'headers'>
                                 <tr>
-                                    <th style={{width:"10px", height: "35px"}}> </th>
-                                    <th style={{width:"150px", height: "35px"}}>Name</th>
-                                    <th style={{width:"150px"}}>Role</th>
-                                    <th style={{width:"150px"}}>Email</th>
-                                    <th style={{width:"150px"}}>Phone Number</th>
+                                    <th id = "select"> </th>
+                                    <th id = "header">Name</th>
+                                    <th id = "header">Role</th>
+                                    <th id = "header">Email</th>
+                                    <th id = "header">Phone Number</th>
                                 </tr>
                                 </thead>
                                 

@@ -3,6 +3,7 @@ import {  Link, withRouter } from 'react-router-dom'
 import { API } from '../../Main/constants'
 
 export let selected_id = ""
+export let page_type = ""
 
 class InventoryTable extends React.Component {
     constructor(props) {
@@ -12,14 +13,12 @@ class InventoryTable extends React.Component {
             selectedQuery: "",
             selectedButton: "",
             item: [],
-
         }
         this.compareBy = this.compareBy.bind(this)
         this.sortBy = this.sortBy.bind(this)
         this.onChange = this.onChange.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
         this.onButtonChange = this.onButtonChange.bind(this)
-
     }
 
     componentDidMount() {
@@ -72,10 +71,12 @@ class InventoryTable extends React.Component {
         let button = this.state.selectedButton
 
         if (button === 'add' && this.state.selectedQuery === "") {
+            page_type = "Add"
             this.props.history.push('./inventory/form')
         }
         if (button === 'update' && this.state.selectedQuery !== "") {
             selected_id = this.state.selectedQuery
+            page_type = "Update"
             this.props.history.push ('./inventory/form')
         }
         if (button === 'delete' && this.state.selectedQuery !== "") {
@@ -90,6 +91,10 @@ class InventoryTable extends React.Component {
             window.location.reload();
         }
     }
+    
+    refresh() {
+        window.location.reload();
+    }
 
     onButtonChange(event) {
         this.setState({ selectedButton: event.target.value})
@@ -100,7 +105,6 @@ class InventoryTable extends React.Component {
         return (
             <div>
                 <div className = "adminButtons">
-                    {/* <Link to = "/admin/messages">Messages</Link> */}
                     <Link to = "/admin/inventory">Inventory</Link>
                     <Link to = "/admin/users">Users</Link>
                 </div>
@@ -109,6 +113,7 @@ class InventoryTable extends React.Component {
                         <h1 className = "title">Inventory Items</h1>
                         <div className = "arrange">
                             <div className = "actions">
+                                <button value = "clear" onClick = {this.refresh}>Clear</button>
                                 <button value = "add" onClick = {this.onButtonChange} type = "submit">Add</button>
                                 <button value = "update" onClick = {this.onButtonChange} type = "submit">Edit</button>
                                 <button value = "delete" onClick = {this.onButtonChange} type = "submit">Delete</button>
@@ -131,10 +136,10 @@ class InventoryTable extends React.Component {
                             
                             <thead className = 'headers'>
                                 <tr>
-                                    <th style={{width:"10px", height: "35px"}}> </th>
-                                    <th style={{width:"150px"}}>Item</th>
-                                    <th style={{width:"150px"}}>Current Quantity</th>
-                                    <th style={{width:"150px"}}>Minimum Quantity</th>
+                                    <th id = "select"> </th>
+                                    <th id = "header">Item</th>
+                                    <th id = "header">Current Quantity</th>
+                                    <th id = "header">Minimum Quantity</th>
                                 </tr>
                                 </thead>
                                 

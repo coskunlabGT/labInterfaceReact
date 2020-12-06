@@ -10,9 +10,9 @@ function Role(props) {
                 onChange = {props.handleChange}
                 required
                 >
-                <option value="student">Student</option>
-                <option value="admin">Admin</option>
-                <option value="other">Other</option>
+                <option value="Student">Student</option>
+                <option value="Admin">Admin</option>
+                <option value="Other">Other</option>
             </select>
         </div>
     )

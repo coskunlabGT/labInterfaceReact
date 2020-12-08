@@ -2,22 +2,41 @@ import React from 'react'
 import {API} from '../../Main/constants'
 import FormComponent from './FormComponent'
 import { withRouter } from 'react-router-dom';
+import { selected_id, page_type } from './InventoryTable'
+
 
 class Form extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             item_id: "",
+            item_name: "",
             current_quantity: "",
             min_quantity: "",
-            page_type: ""
-        }
+            page_type: page_type,
+    }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    componentDidMount() { //for edit
+    async componentDidMount() {
+        const link = {API}.API+ '/QuickOrder/get-item/' + selected_id + '/'
+        let data = {
+            method: 'GET',
+        }
 
+        await fetch(link, data)
+            .then(response => response.json())
+            .then(response => {
+                this.setState({
+                    item_id: response.id,
+                    item_name: response.item_name,
+                    current_quantity: response.current_quantity,
+                    min_quantity: response.min_quantity,
+                })
+            }).catch(error => {
+                console.log(error)
+            })
     }
 
     handleChange(event) {
@@ -48,6 +67,14 @@ class Form extends React.Component {
                 body: JSON.stringify(this.state)
             }
         }
+
+        this.setState({
+            item_id: "",
+            item_name: "",
+            current_quantity: "",
+            min_quantity: "",
+        })
+
     }
 
     render() {

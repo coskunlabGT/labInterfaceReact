@@ -3,16 +3,15 @@ import UserName from './components/UserName'
 import Role from './components/Role'
 import Email from './components/Email'
 import Phone from './components/Phone'
-import Admin from '../Admin.css'
 import { Link } from 'react-router-dom'
 
 function FormComponent(props) {
     return(
         <div className="admin">
-            <h1 id="form-title">Add User</h1>
+            <h1 id="form-title">{props.data.page_type} User</h1>
             <form onSubmit = {props.handleSubmit}>
                 <UserName
-                    name = {props.data.username}
+                    name = {props.data.user_name}
                     handleChange = {props.handleChange}
                 />
                 <Role

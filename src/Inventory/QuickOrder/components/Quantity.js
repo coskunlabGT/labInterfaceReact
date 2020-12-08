@@ -9,7 +9,9 @@ function Quantity(props) {
             id = "quantity"
             name = "requested_quantity"
             value = {props.requested_quantity} 
-            min = "0" onChange = {props.handleChange} 
+            min = "0" 
+            onChange = {props.handleChange} 
+            required
             />
         </div>
     )

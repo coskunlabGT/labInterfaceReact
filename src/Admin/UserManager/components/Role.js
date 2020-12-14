@@ -6,6 +6,7 @@ function Role(props) {
             <h3 className="label">Role</h3>
             <select 
                 id="role" 
+                name="role"
                 value = {props.role}
                 onChange = {props.handleChange}
                 required

@@ -20,24 +20,33 @@ class Form extends React.Component {
     }
 
     async componentDidMount() {
-        const link = {API}.API+ '/QuickOrder/get-item/' + selected_id + '/'
-        let data = {
-            method: 'GET',
+        if (this.state.page_type === "Add") {
+            this.setState({
+                item_id: "",
+                item_name: "",
+                current_quantity: "",
+                min_quantity: "",
+            })
+        } else {
+            const link = {API}.API+ '/QuickOrder/get-item/' + selected_id + '/'
+            let data = {
+                method: 'GET',
+            }
+    
+            await fetch(link, data)
+                .then(response => response.json())
+                .then(response => {
+                    this.setState({
+                        item_id: response.id,
+                        item_name: response.item_name,
+                        current_quantity: response.current_quantity,
+                        min_quantity: response.min_quantity,
+                    })
+                }).catch(error => {
+                    console.log(error)
+            })
         }
 
-        await fetch(link, data)
-            .then(response => response.json())
-            .then(response => {
-                this.setState({
-                    item_id: response.id,
-                    item_name: response.item_name,
-                    current_quantity: response.current_quantity,
-                    min_quantity: response.min_quantity,
-                })
-            }).catch(error => {
-                console.log(error)
-            })
-            console.log(this.state)
     }
 
     handleChange(event) {
@@ -48,8 +57,7 @@ class Form extends React.Component {
     }
 
     handleSubmit(event) {
-        const page_type = this.state.page_type;
-        if (page_type.equals("add")) {
+        if (this.state.page_type === 'Add') {
             event.preventDefault()
             const link = {API}.API + ''
             const data = {

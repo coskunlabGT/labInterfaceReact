@@ -2,7 +2,7 @@ import React from 'react'
 
 function User(props) {
     return (
-        <div className = "input">
+        <div>
             <h3 className = "label">Name</h3>
             <select 
                 id = "user"

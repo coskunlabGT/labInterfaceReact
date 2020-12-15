@@ -26,9 +26,9 @@ function FormComponent(props) {
                     phone = {props.data.phone}
                     handleChange = {props.handleChange}
                 />
-                <div className = "buttons">
-                    <button id = "submit" type = "submit">Submit</button>
-                    <Link to =  "/admin/users" id = "back">Back</Link>
+                <div className = "form-buttons">
+                    <button className = "submit" type = "submit">Submit</button>
+                    <Link to =  "/admin/users" className = "back">Back</Link>
                 </div>
             </form>
         </div>

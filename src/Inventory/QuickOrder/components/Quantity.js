@@ -2,7 +2,7 @@ import React from 'react'
 
 function Quantity(props) {
     return (
-        <div className = "input">
+        <div>
             <h3 className = "label">Quantity</h3>
             <input
             type = "number"  

@@ -103,8 +103,7 @@ class Orders extends React.Component {
                         <input type="text" id="search" onChange={this.search} placeholder="Search for orders.."/>
                         <p className = "indicator">Sort By</p>
                         <select 
-                            id = "sort"
-                            className = 'form-control'
+                            className = 'sort'
                             onChange = {this.sortBy}
                             >
                             <option value = "order_date:2">Newest to Oldest</option>
@@ -115,8 +114,7 @@ class Orders extends React.Component {
                         
                         <p className = "indicator">Filter</p>
                         <select 
-                            id = "filter"
-                            className = 'form-control'
+                            className = "filter"
                             onChange = {this.filterBy}
                             >
                             <option value = "all">All Orders</option>

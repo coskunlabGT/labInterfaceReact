@@ -104,7 +104,7 @@ class InventoryTable extends React.Component {
     render() {
         return (
             <div>
-                <div className = "adminButtons">
+                <div className = "admin-buttons">
                     <Link to = "/admin/inventory">Inventory</Link>
                     <Link to = "/admin/users">Users</Link>
                 </div>
@@ -120,8 +120,7 @@ class InventoryTable extends React.Component {
                             </div>
                             <p className = "indicator">Sort By</p>
                             <select 
-                                id = "sort"
-                                className = 'form-control'
+                                className = "sort"
                                 onChange = {this.sortBy}
                             >
                                 <option value = "item_name:1">A to Z</option>
@@ -136,10 +135,10 @@ class InventoryTable extends React.Component {
                             
                             <thead className = 'headers'>
                                 <tr>
-                                    <th id = "select"> </th>
-                                    <th id = "header">Item</th>
-                                    <th id = "header">Current Quantity</th>
-                                    <th id = "header">Minimum Quantity</th>
+                                    <th> </th>
+                                    <th>Item</th>
+                                    <th>Current Quantity</th>
+                                    <th>Minimum Quantity</th>
                                 </tr>
                                 </thead>
                                 

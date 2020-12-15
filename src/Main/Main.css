@@ -1,65 +1,57 @@
-
+/* Navigation Bar */
 .navbar {
     display: flex;
     justify-content: center;
+    text-decoration: none; 
+    font-size: 25px;
+    font-weight: 500;
     border-bottom: 2px solid #4141410a;
     background-color: #4141410a;
     color: #414141;
-    font-size: 25px;
-    font-weight: 500;
-    list-style: none;
-    text-decoration: none; 
     margin-bottom: 30px;
-  }
+}
 
-  .tab {
-    text-decoration: none;  
-    padding: 10px;
-    padding-left: 15px;
-    padding-right: 15px;
-    color: #414141;
-  }
+.tab {
+  text-decoration: none;  
+  padding: 10px 15px 10px 15px;
+}
 
-  .tab:visited {
-    color: #414141;
-  }
+.tab:visited {
+  color: #414141;
+}
+
+.tab:hover {
+  font-weight: bold;
+}
+
+.tab.active {
+  font-weight: bold;
+}
   
-  .tab:hover {
-    font-weight: bold;
-  }
+/* Error Page */
+.error {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
 
-  .tab.active {
-    font-weight: bold;
-  }
-  
+.error > h1 {
+  font-size: 90px;
+  margin: 15px;
+}
 
-  .error {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin-top: 20px;
-  }
+.error > p {
+  font-size: 25px;
 
-  .error > h1 {
-    margin: 15px;
-    font-size: 90px;
-  }
-
-  .error > p {
-    margin-left: 15px;
-    margin-right: 15px;
-    font-size: 25px;
-
-  }
+}
 
 #link {
   text-decoration: none;
-  margin-bottom: 15px;
-  color: #414141;
-  font-weight: bold;
   font-size: 20px;
-  }
+  font-weight: 700;
+  color: #414141;
+}
 
-  #link:hover {
-    color: #4141417c;
-  }
+#link:hover {
+  color: #4141417c;
+}

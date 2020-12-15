@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom'
 
 function FormComponent(props) {
     return(
-        <div className = "quickOrder">
-            <h1 id = "orderTitle">Quick Order</h1>
+        <div className = "quick-order">
+            <h1 className = "order-title">Quick Order</h1>
             <form onSubmit = {props.handleSubmit}>
                 <InputItem 
                     items = {props.data.items}
@@ -23,9 +23,9 @@ function FormComponent(props) {
                     user = {props.data.user}
                     handleChange = {props.handleChange}                        
                 />
-                <div className = "buttons">
-                    <button id = "submit" type = "submit">Submit</button>
-                    <Link to =  "/inventory" id = "back">Back</Link>
+                <div className = "form-buttons">
+                    <button className = "submit" type = "submit">Submit</button>
+                    <Link to =  "/inventory" className = "back">Back</Link>
                 </div>
             </form>
              

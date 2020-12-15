@@ -19,27 +19,35 @@ class Form extends React.Component {
     }
 
     componentDidMount() {
-        const link =  {API}.API + '/UserManagement/get-Users/?user_id=' + selected_id
-        let data = {
-            method: 'GET',
-            headers: {
-              'Content-Type': 'application/json',
-            }
-        }
-        
-        fetch(link, data)
-        .then(response => response.json())
-        .then(response => {
+        if (this.state.page_type === 'Add') {
             this.setState({
-                user_name: response.name,
-                role: response.role,
-                email: response.email,
-                phone: response.phone_number,
+                user_name: "",
+                role: "",
+                email: "",
+                phone: "",
             })
-            console.log(response)
-        }).catch(error => {
-            console.log(error)
-        })
+        } else {
+            const link =  {API}.API + '/UserManagement/get-Users/?user_id=' + selected_id
+            let data = {
+                method: 'GET',
+                headers: {
+                  'Content-Type': 'application/json',
+                }
+            }
+            
+            fetch(link, data)
+            .then(response => response.json())
+            .then(response => {
+                this.setState({
+                    user_name: response.name,
+                    role: response.role,
+                    email: response.email,
+                    phone: response.phone_number,
+                })
+            }).catch(error => {
+                console.log(error)
+            })
+        }
     }
 
     handleChange(event) {
@@ -50,8 +58,7 @@ class Form extends React.Component {
     }
 
     handleSubmit(event) {
-        const page_type = this.state.page_type;
-        if (page_type.equals("add")) {
+        if (this.state.page_type === 'Add') {
             event.preventDefault()
             const link = {API}.API + ''
             const data = {

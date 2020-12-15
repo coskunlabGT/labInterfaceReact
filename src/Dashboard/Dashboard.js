@@ -112,26 +112,22 @@ export default class Dashboard extends Component {
                 }}>
                     {this.state.allUsers.map(element => {return <option key={element.id}>{element.name}</option>})}
                 </select>
-               <div>
+               <div className = "dashboard-buttons">
                   <button onMouseDown={() => this.changeResearchDisplay("Current Research")}>Current Research</button>
-                </div>
-                <div>
                   <button onMouseDown={() => this.changeResearchDisplay("Future Research")}>Future Research</button>
-                </div>
-                <div>
                   <button onMouseDown={() => this.changeResearchDisplay("All Research")}>Deadlines</button>
-                </div>
+              </div>
             </div>
           </div>
           <div className="outline">
             <h1>{this.state.researchDisplayCurrent}</h1>
             <table>
               <tbody>
-                <tr>
-                  <th style={{width:"200px"}}>Name</th>
-                  <th style={{width:"500px"}}>Description</th>
-                  <th style={{width:"150px"}}>Due Date</th>
-                  <th style={{width:"150px"}}>Approved</th>
+                <tr className = "dashboard-header">
+                  <th className = "dashboard-header">Name</th>
+                  <th className = "dashboard-header">Description</th>
+                  <th className = "dashboard-header">Due Date</th>
+                  <th className = "dashboard-header">Approved</th>
                 </tr>
                 {this.state.selectedUserDashboard.map(element =>
                 {

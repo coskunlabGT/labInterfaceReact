@@ -36,6 +36,12 @@ function Navbar() {
                     to = "/dashboards"
                 >Dashboards</NavLink>
 
+                <NavLink
+                    activeClassName = "active"
+                    className = "tab"
+                    to = "/admin/inventory"
+                >Admin</NavLink>
+
             </nav>
         </div>
     )

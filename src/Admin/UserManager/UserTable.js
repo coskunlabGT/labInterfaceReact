@@ -1,4 +1,3 @@
-import { select } from '@syncfusion/ej2-base'
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom' 
 import { API } from '../../Main/constants'
@@ -105,7 +104,7 @@ class UserTable extends React.Component {
     render() {
         return (
             <div>
-                <div className = "adminButtons">
+                <div className = "admin-buttons">
                     <Link to = "/admin/inventory">Inventory</Link>
                     <Link to = "/admin/users">Users</Link>
                 </div>
@@ -122,8 +121,7 @@ class UserTable extends React.Component {
                             </div>
                             <p className = "indicator">Sort By</p>
                             <select 
-                                id = "sort"
-                                className = 'form-control'
+                                className = "sort"
                                 onChange = {this.sortBy}
                             >
                                 <option value = "name:1">A to Z</option>
@@ -139,11 +137,11 @@ class UserTable extends React.Component {
                             
                             <thead className = 'headers'>
                                 <tr>
-                                    <th id = "select"> </th>
-                                    <th id = "header">Name</th>
-                                    <th id = "header">Role</th>
-                                    <th id = "header">Email</th>
-                                    <th id = "header">Phone Number</th>
+                                    <th> </th>
+                                    <th>Name</th>
+                                    <th>Role</th>
+                                    <th>Email</th>
+                                    <th>Phone Number</th>
                                 </tr>
                                 </thead>
                                 

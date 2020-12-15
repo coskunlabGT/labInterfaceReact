@@ -2,7 +2,7 @@ import React from 'react'
 
 function Item(props) {
     return (
-        <div className="admin-input">
+        <div>
             <h3 className="label">Item</h3>
             <input
                 id="item-name"

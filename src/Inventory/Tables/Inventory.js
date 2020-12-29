@@ -92,10 +92,10 @@ class Inventory extends React.Component {
                         
                         <thead className = 'headers'>
                             <tr>
-                                <th style={{width:"150px", height: "35px"}}>Item</th>
-                                <th style={{width:"150px"}}>Current Quantity</th>
-                                <th style={{width:"150px"}}>Min Quantity</th>
-                                <th style={{width:"150px"}}>Refill Needed</th>
+                                <th>Item</th>
+                                <th>Current Quantity</th>
+                                <th>Min Quantity</th>
+                                <th>Refill Needed</th>
                             </tr>
                             </thead>
                             

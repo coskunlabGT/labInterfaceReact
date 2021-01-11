@@ -22,7 +22,7 @@ class CurrentReading extends Component {
     }
 
     getLatestReading() {
-        fetch(API + '/LevelFeature/get_latest/')
+        fetch(API + '/LevelFeature/get-latest/')
             .then(res => res.json())
             .then(
                 (result) => {

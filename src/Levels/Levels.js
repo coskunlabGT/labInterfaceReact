@@ -1,44 +1,63 @@
 import React from 'react'
 import './Levels.css'
-import ReactPlayer from 'react-player';
-import CurrentReading from './LevelComponents/CurrentReading';
+import Player from './LevelComponents/Player'
+import LevelsForm from './LevelComponents/LevelsForm'
+import {API} from "../Main/constants";
 
+class Levels extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            streams: []
+        }
+        this.reload = this.reload.bind(this);
+    }
 
-function Levels() {
-    return (
-        <div>
-            <CurrentReading/>
-            <div className="container">
-                <iframe
-                        title="Cam 1"
-                        type="text/html"
-                        frameBorder="0"
-                        width='26%'
-                        height='60%'
-                        src="//video.nest.com/embedded/live/MepFwxGlxr?autoplay=1"
-                        allowFullScreen>
-                </iframe>
-                <iframe
-                        title="3D Printer Cam"
-                        type="text/html"
-                        frameBorder="0"
-                        width='26%'
-                        height='60%'
-                        src="//video.nest.com/embedded/live/UawlptLNv8?autoplay=1"
-                        allowFullScreen>
-                </iframe>
-                <ReactPlayer
-                    url = 'https://www.youtube.com/watch?v=9Auq9mYxFEE&list=PLU12uITxBEPHofmeOxlMA5zh11Nl1iB1E&index=7&t=0s'
-                    className='right-player'
-                    playing
-                    volume={0}
-                    width='26%'
-                    height='60%'
-                    controls={true}
-                />
+    componentDidMount() {
+        this.getLivestreams();
+    }
+
+    reload() {
+        this.getLivestreams();
+        window.location.reload();
+    }
+
+    getLivestreams() {
+        let endpoint = API + '/LevelFeature/get-livestreams/'
+        let data = {
+            method: 'GET',
+        }
+
+        fetch(endpoint, data)
+            .then(response => response.json())
+            .then(response => {
+                this.setState({
+                    streams: [response]
+                })
+                console.log(this.state.streams);
+            }).catch(error => {console.log(error)})
+    }
+
+    render() {
+        return (
+            <div>
+                <LevelsForm reload={this.reload}/>
+                <div className="levels-container">
+                    {this.state.streams.map(stream => {
+                        return(
+                            stream.map(video => {
+                                const {id, url} = video;
+                                return (
+                                    <Player key={id} id={id} url={url} />
+                                )
+                            })
+                        )
+                    })}
+                </div>
             </div>
-        </div>
-    );
+        );
+    }
+
 }
 
 export default Levels;

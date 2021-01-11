@@ -13,7 +13,7 @@ class Form extends React.Component {
             item_name: "",
             current_quantity: "",
             min_quantity: "",
-            page_type: page_type,
+            page_type: page_type
     }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -28,11 +28,11 @@ class Form extends React.Component {
                 min_quantity: "",
             })
         } else {
-            const link = {API}.API+ '/QuickOrder/get-item/' + selected_id + '/'
+            const link = API + '/QuickOrder/get-item/' + selected_id
             let data = {
                 method: 'GET',
             }
-    
+
             await fetch(link, data)
                 .then(response => response.json())
                 .then(response => {
@@ -44,9 +44,8 @@ class Form extends React.Component {
                     })
                 }).catch(error => {
                     console.log(error)
-            })
+                })
         }
-
     }
 
     handleChange(event) {
@@ -59,7 +58,7 @@ class Form extends React.Component {
     handleSubmit(event) {
         if (this.state.page_type === 'Add') {
             event.preventDefault()
-            const link = {API}.API + ''
+            const link = API + '/QuickOrder/add-item/'
             const data = {
                 method: 'POST',
                 headers: {
@@ -67,7 +66,14 @@ class Form extends React.Component {
                 },
                 body: JSON.stringify(this.state)
             }
+
+            fetch(link,data)
+            .then(response => {console.log(response)})
+            .catch(error => {console.log(error)})
+            this.props.history.push('/admin/inventory')
         } else { //edit
+            event.preventDefault()
+            const link = API + '/QuickOrder/update-item/' + selected_id + '/'
             const data = {
                 method: 'PUT',
                 headers: {
@@ -75,6 +81,11 @@ class Form extends React.Component {
                 },
                 body: JSON.stringify(this.state)
             }
+
+            fetch(link,data)
+            .then(response => {console.log(response)})
+            .catch(error => {console.log(error)})
+            this.props.history.push('/admin/inventory')
         }
 
         this.setState({

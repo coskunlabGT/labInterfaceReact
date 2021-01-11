@@ -7,11 +7,11 @@ function Phone(props) {
             <input
                 id="phone"
                 type="tel"
-                name="phone"
-                value = {props.phone}
+                name="phone_number"
+                value = {props.phone_number}
                 onChange = {props.handleChange}
                 placeholder="(123) 456-7890"
-                pattern="([0-9]{3}) [0-9]{3}-[0-9]{4}"
+                // pattern="([0-9]{3}) [0-9]{3}-[0-9]{4}"
             />
         </div>
     )

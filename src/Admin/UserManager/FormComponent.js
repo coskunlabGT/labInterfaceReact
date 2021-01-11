@@ -27,8 +27,8 @@ function FormComponent(props) {
                     handleChange = {props.handleChange}
                 />
                 <div className = "form-buttons">
-                    <button id = "submit" type = "submit">Submit</button>
-                    <Link to =  "/admin/users" id = "back">Back</Link>
+                    <button className = "submit" type = "submit">Submit</button>
+                    <Link to =  "/admin/users" className = "back">Back</Link>
                 </div>
             </form>
         </div>

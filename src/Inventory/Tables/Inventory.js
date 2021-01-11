@@ -67,7 +67,7 @@ class Inventory extends React.Component {
     render() {
         return (
             <div>
-                <div className = "inventoryButtons">
+                <div className = "inventory-buttons">
                     <Link to = "/inventory/quickOrder">Quick Order</Link>
                     <Link to = "/inventory/orders">Order History</Link>
                 </div>
@@ -76,8 +76,7 @@ class Inventory extends React.Component {
                     <div className = "arrange">
                         <p className = "indicator">Sort By</p>
                         <select 
-                            id = "sort"
-                            className = 'form-control'
+                            className = "sort"
                             onChange = {this.sortBy}
                         >
                             <option value = "item_name:1">A to Z</option>
@@ -93,10 +92,10 @@ class Inventory extends React.Component {
                         
                         <thead className = 'headers'>
                             <tr>
-                                <th style={{width:"150px", height: "35px"}}>Item</th>
-                                <th style={{width:"150px"}}>Current Quantity</th>
-                                <th style={{width:"150px"}}>Min Quantity</th>
-                                <th style={{width:"150px"}}>Refill Needed</th>
+                                <th>Item</th>
+                                <th>Current Quantity</th>
+                                <th>Min Quantity</th>
+                                <th>Refill Needed</th>
                             </tr>
                             </thead>
                             

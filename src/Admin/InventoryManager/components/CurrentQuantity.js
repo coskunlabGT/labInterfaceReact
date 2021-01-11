@@ -2,7 +2,7 @@ import React from 'react'
 
 function CurrentQuantity(props) {
     return (
-        <div className="admin-input">
+        <div>
             <h3 className="label">Current Quantity</h3>
             <input
                 id="curr-quantity"

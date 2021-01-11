@@ -68,7 +68,7 @@ class Form extends React.Component {
     }
 
     handleSubmit(event) {
-        if (this.state.page_type === "Add") {
+        if (this.state.page_type === 'Add') {
             event.preventDefault()
             const link = API + '/UserManagement/add-User/'
             const data = {

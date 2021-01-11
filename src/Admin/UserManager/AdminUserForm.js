@@ -8,38 +8,56 @@ class Form extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            user_name: "",
-            role: "",
+            user_id: "",
+            name: "",
             email: "",
-            phone: "",
-            page_type: page_type,
+            role: "",
+            phone_number: "",
+            token: "Token1",
+            first_time: false,
+            is_deleted: false,
+            page_type: page_type
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    componentDidMount() {
-        const link =  {API}.API + '/UserManagement/get-Users/?user_id=' + selected_id
-        let data = {
-            method: 'GET',
-            headers: {
-              'Content-Type': 'application/json',
-            }
-        }
-        
-        fetch(link, data)
-        .then(response => response.json())
-        .then(response => {
+    async componentDidMount() {
+        if (this.state.page_type === 'Add') {
             this.setState({
-                user_name: response.name,
-                role: response.role,
-                email: response.email,
-                phone: response.phone_number,
+                name: "",
+                role: "",
+                email: "",
+                phone_number: "",
             })
-            console.log(response)
-        }).catch(error => {
-            console.log(error)
-        })
+        } else {
+            const link =  API + '/UserManagement/get-Users/?user_id=' + selected_id
+
+            let data = {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            }
+
+            await fetch(link, data)
+                .then(response => response.json())
+                .then(response => {
+                    this.setState({
+                        user_id: response.id,
+                        name: response.name,
+                        email: response.email,
+                        role: response.role,
+                        phone_number: response.phone_number,
+                        token: response.token,
+                        first_time: response.first_time,
+                        is_deleted: response.is_deleted
+                    })
+                    console.log(response)
+                }).catch(error => {
+                console.log(error)
+            })
+        }
     }
 
     handleChange(event) {
@@ -50,10 +68,9 @@ class Form extends React.Component {
     }
 
     handleSubmit(event) {
-        const page_type = this.state.page_type;
-        if (page_type.equals("add")) {
+        if (this.state.page_type === "Add") {
             event.preventDefault()
-            const link = {API}.API + ''
+            const link = API + '/UserManagement/add-User/'
             const data = {
                 method: 'POST',
                 headers: {
@@ -62,22 +79,39 @@ class Form extends React.Component {
                 body: JSON.stringify(this.state)
             }
 
+            console.log(data.body);
+
+            fetch(link,data)
+            .then(response => {console.log(response)})
+            .catch(error => {console.log(error)})
+            this.props.history.push('/admin/users')
         } else { //edit
             event.preventDefault()
+            const link = API + '/UserManagement/update-User/?user_id=' + selected_id + '/'
             const data = {
-                method: 'PUT',
+                method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(this.state)
             }
+
+            fetch(link, data)
+            .then(response => {console.log(response)})
+            .catch(error => {console.log(error)})
+            this.props.history.push('/admin/users')
         }
         this.setState({
-            user_name: "",
-            role: "",
+            user_id: "",
+            name: "",
             email: "",
-            phone: "",
+            role: "",
+            phone_number: "",
+            token: "",
+            first_time: false,
+            is_deleted: false,
         })
+        window.location.reload();
     }
 
     render() {

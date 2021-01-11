@@ -7,7 +7,7 @@ function UserName(props) {
             <input
                 id="name"
                 type="text"
-                name="user_name"
+                name="name"
                 value = {props.name}
                 onChange = {props.handleChange}
                 required

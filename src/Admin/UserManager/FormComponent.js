@@ -11,7 +11,7 @@ function FormComponent(props) {
             <h1 id="form-title">{props.data.page_type} User</h1>
             <form onSubmit = {props.handleSubmit}>
                 <UserName
-                    name = {props.data.user_name}
+                    name = {props.data.name}
                     handleChange = {props.handleChange}
                 />
                 <Role
@@ -23,10 +23,10 @@ function FormComponent(props) {
                     handleChange = {props.handleChange}
                 />
                 <Phone
-                    phone = {props.data.phone}
+                    phone_number = {props.data.phone_number}
                     handleChange = {props.handleChange}
                 />
-                <div className = "buttons">
+                <div className = "form-buttons">
                     <button id = "submit" type = "submit">Submit</button>
                     <Link to =  "/admin/users" id = "back">Back</Link>
                 </div>

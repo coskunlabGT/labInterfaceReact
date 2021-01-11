@@ -5,10 +5,11 @@ function Role(props) {
         <div className="admin-input">
             <h3 className="label">Role</h3>
             <select 
-                id="role" 
+                id="role"
+                name="role"
                 value = {props.role}
                 onChange = {props.handleChange}
-                required
+                // required
                 >
                 <option value="Student">Student</option>
                 <option value="Admin">Admin</option>

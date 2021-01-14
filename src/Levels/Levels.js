@@ -1,5 +1,5 @@
 import React from 'react'
-import 'Levels.css'
+import './Levels.css'
 import {API} from "../Main/constants";
 
 class Levels extends React.Component {

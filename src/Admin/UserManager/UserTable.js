@@ -1,4 +1,3 @@
-import { select } from '@syncfusion/ej2-base'
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom' 
 import { API } from '../../Main/constants'
@@ -12,7 +11,7 @@ class UserTable extends React.Component {
         this.state = {
             users: [],
             selectedQuery: "",
-            selectedButton: "", 
+            selectedButton: "",
             user: {},
         }
         this.compareBy = this.compareBy.bind(this)
@@ -108,6 +107,7 @@ class UserTable extends React.Component {
                 <div className = "adminButtons">
                     <Link to = "/admin/inventory">Inventory</Link>
                     <Link to = "/admin/users">Users</Link>
+                    <Link to = "/admin/levels">Levels</Link>
                 </div>
                 <form onSubmit = {this.onSubmit}>
 

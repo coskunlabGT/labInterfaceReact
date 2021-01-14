@@ -1,17 +1,25 @@
-import React from 'react'
-import 'Levels.css'
-import {API} from "../Main/constants";
+import React from "react";
+import {Link, withRouter} from "react-router-dom";
+import LevelForm from "../../Levels/LevelComponents/LevelForm";
+import Player from "../../Levels/LevelComponents/Player";
+import {API} from "../../Main/constants"
 
-class Levels extends React.Component {
+class LevelManager extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             streams: []
         }
+        this.reload = this.reload.bind(this);
     }
 
     componentDidMount() {
         this.getLivestreams();
+    }
+
+    reload() {
+        this.getLivestreams();
+        window.location.reload();
     }
 
     getLivestreams() {
@@ -33,30 +41,27 @@ class Levels extends React.Component {
     render() {
         return (
             <div>
+                <div className = "adminButtons">
+                    <Link to = "/admin/inventory">Inventory</Link>
+                    <Link to = "/admin/users">Users</Link>
+                    <Link to = "/admin/levels">Levels</Link>
+                </div>
+                <LevelForm reload={this.reload}/>
                 <div className="levels-container">
                     {this.state.streams.map(stream => {
                         return(
                             stream.map(video => {
                                 const {id, url} = video;
                                 return (
-                                    <div className='player-container'>
-                                        <iframe
-                                            key={id}
-                                            className='livestream'
-                                            frameBorder="0"
-                                            src={url}
-                                            allowFullScreen>
-                                        </iframe>
-                                    </div>
+                                    <Player key={id} id={id} url={url} />
                                 )
                             })
                         )
                     })}
                 </div>
             </div>
-        );
+        )
     }
-
 }
 
-export default Levels;
+export default withRouter(LevelManager)

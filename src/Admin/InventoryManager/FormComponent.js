@@ -21,9 +21,9 @@ function FormComponent(props) {
                     min_quantity = {props.data.min_quantity}
                     handleChange = {props.handleChange}
                 />
-                <div className = "buttons">
-                    <button id = "submit" type = "submit">Submit</button>
-                    <Link to =  "/admin/inventory" id = "back">Back</Link>
+                <div className = "form-buttons">
+                    <button className = "submit" type = "submit">Submit</button>
+                    <Link to =  "/admin/inventory" className = "back">Back</Link>
                 </div>
             </form>
         </div>

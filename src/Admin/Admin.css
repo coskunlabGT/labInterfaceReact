@@ -1,215 +1,75 @@
 .admin {
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-}
-
-.admin > form {
     display: flex;
     flex-direction: column;
-    text-align: center;
     align-items: center;
-    color: #414141;
 }
 
 #form-title {
-    display: inline-block;
-    justify-content: center;
-    margin-top: 60px;
-    margin-bottom: 35px;
     font-size: 45px;
     font-weight: 500;
-    background-color: #414141;
+    border-radius: 8px;
+    background: #414141;
     color: #ffffff;
-    width: 250px;
-    padding: 10px;
-    border-radius: 12px;
-}
-
-/*.label from quickOrder*/
-/*.buttons, #submit, and #back from quickOrder*/
-
-.admin-input {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #ECE4E47A;
-    height: 60px;
-    padding-left: 20px;
-    padding-right: 20px;
-    border-radius: 12px;
-    margin-bottom: 25px;
+    padding: 5px 30px 5px 30px;
+    margin: 60px 0px 10px 0px;
 }
 
 #name, #role, #email, #phone,
 #item-name, #curr-quantity, #min-quantity {
-    border: none;
     text-align: center;
     font-size: 18px;
     height: 30px;
-    padding-left: 5px;
-    padding-right: 5px;
-    margin-left: 5px;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 3px;
+    outline: none;
     color: #414141;
-}
-
-/*user manager form*/
-
-#name {
-    width: 135px;
-    height: 30px;
+    padding: 0px 5px 0px 5px;
 }
 
 #role {
-    width: 145px;
-}
-
-#email {
-    width: 140px;
-}
-
-#phone {
-    width: 135px;
-}
-
-/*inventory manager form*/
-
-#item-name {
-    width: 175px;
-}
-
-#curr-quantity {
-    width: 55px;
-    padding-right: 0px;
-}
-
-#min-quantity {
-    width: 60px;
-    padding-right: 0px;
-}
-
-/* Admin Table */
-
-#select {
-    width: 10px;
+    width: 230px;
     height: 35px;
 }
 
-#header {
-    width: 150px;
-    height: 35px;
+#name:focus, #role:focus, #email:focus, #phone:focus,
+#item-name:focus, #curr-quantity:focus, #min-quantity:focus {
+    border-color: #748B75;
 }
 
 
 /* Admin Table Actions */
 .actions > button {
     text-decoration: none;
+    font-size: 15px;
     color: #414141;
     background: none;
-    width: auto;
+    border: none;
+    outline: none;
 }
 
 .actions > button:hover {
     text-decoration: underline;
-    border: none;
 }
 
 
 /* Admin Page Buttons */
-
-.adminButtons {
-    margin-left: 35px;
-    margin-top: 20px;
-    margin-bottom: -15px;
+.admin-buttons {
+    margin-left: 40px;
 }
 
-.adminButtons > a {
+.admin-buttons > a {
     text-decoration: none;
-    margin-right: 20px;
-    padding: 8px;
+    font-size: 18px;
+    font-weight: 700;
     border-radius: 8px;
     background: #41414111;
     color:#414141;
-    font-size: 18px;
-    font-weight: bold;
+    padding: 8px;
+    margin-right: 10px;
 }
 
-.adminButtons > a:hover {
+.admin-buttons > a:hover {
     background: #414141;
     color: #ffffff;
-}
-
-.actionButtons {
-    margin: -40px;
-    margin-top: -30px;
-    padding: 0px;
-}
-
-.actionButtons > button {
-    width: 80px;
-    background: none;
-    border: solid 3px  #41414111;
-    color: #414141;
-    padding: 10px;
-}
-
-.actionButtons > button:hover {
-    background: #41414111;
-    color: #414141;
-    border: none;
-}
-
-
-/* Level Manager CSS */
-
-.url-form > input[type=text] {
-    width: 70%;
-    height: 45px;
-    margin: 50px 15px 0 50px;
-    padding: 0 15px;
-    border: 1px solid #8C7C7C;
-    border-radius: 4px;
-    font-size: 21px;
-    color: #414141;
-}
-
-::placeholder {
-    color: #B1A6A6;
-}
-
-.go-btn {
-    font-size: 15px;
-    height: 30px;
-    width: 50px;
-    padding: 0;
-}
-
-.levels-container {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    height: calc(100vh - 200px);
-    margin-top: 40px;
-}
-
-.player-container {
-    position: relative;
-}
-
-.livestream {
-    width: 350px;
-    height: 320px;
-    margin: 0 0 25px 50px;
-}
-
-.exit-btn {
-    font-size: 15px;
-    height: 20px;
-    width: 20px;
-    border-radius: 100%;
-    padding: 0;
-    position: absolute;
-    margin-top: -10px;
-    margin-left: -10px;
 }

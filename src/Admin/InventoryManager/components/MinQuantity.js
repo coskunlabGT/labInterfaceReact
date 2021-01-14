@@ -2,7 +2,7 @@ import React from 'react'
 
 function MinQuantity(props) {
     return (
-        <div className="admin-input">
+        <div>
             <h3 className="label">Minimum Quantity</h3>
             <input
                 id="min-quantity"

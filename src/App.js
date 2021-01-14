@@ -31,6 +31,7 @@ import './Main/Main.css'
 import './Home/Home.css'
 import './Admin/Admin.css'
 import './Main/Tables.css'
+import './Main/Forms.css'
 
 
 function App() {

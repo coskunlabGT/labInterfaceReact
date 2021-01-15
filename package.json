@@ -3,13 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@syncfusion/ej2-base": "^18.4.31",
+    "@syncfusion/ej2-data": "^18.4.30",
+    "@syncfusion/ej2-react-schedule": "^18.4.32",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^3.4.1"
+    "react-scripts": "^3.4.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -33,6 +36,6 @@
     ]
   },
   "devDependencies": {
-    "react-player": "^2.3.1"
+    "react-player": "^2.7.2"
   }
 }

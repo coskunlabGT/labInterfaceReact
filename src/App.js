@@ -5,8 +5,10 @@ import Orders from './Inventory/Tables/Orders'
 import Inventory from './Inventory/Tables/Inventory'
 import Navbar from './Main/Navbar'
 import PageNotFound from './Main/PageNotFound'
-import FormContainer from './Inventory/QuickOrder/FormContainer'
+import QuickOrder from './Inventory/QuickOrder/FormContainer'
+import GeneralOrder from './Inventory/GeneralOrder/FormContainer'
 import Home from './Home/Home'
+import EZLabX from './EZLabX/EZLabX'
 import Dashboard from './Dashboard/Dashboard'
 import Levels from "./Levels/Levels";
 import Calendar from "./Calendar/Schedule";
@@ -28,6 +30,7 @@ import "../node_modules/@syncfusion/ej2-schedule/styles/material.css";
 import './Inventory/Inventory.css'
 import './Main/Main.css'
 import './Home/Home.css'
+import './EZLabX/EZLabX.css'
 import './Admin/Admin.css'
 import './Main/Tables.css'
 import './Main/Forms.css'
@@ -44,12 +47,20 @@ function App() {
                 <Home />
               </Route>
 
+              <Route exact path = '/about'>
+                <EZLabX />
+              </Route>
+
               <Route exact path = '/inventory'>
                 <Inventory />
               </Route>
 
               <Route exact path = '/inventory/quickOrder'>
-                <FormContainer />
+                <QuickOrder />
+              </Route>
+
+              <Route exact path = '/inventory/generalOrder'>
+                <GeneralOrder />
               </Route>
 
               <Route exact path = '/inventory/orders'>

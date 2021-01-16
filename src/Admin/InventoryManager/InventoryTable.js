@@ -22,7 +22,7 @@ class InventoryTable extends React.Component {
     }
 
     componentDidMount() {
-        let inventoryLink = {API}.API + '/QuickOrder/inventory/'
+        let inventoryLink = API + '/QuickOrder/inventory/'
         let data = {
             method: 'GET',
         }

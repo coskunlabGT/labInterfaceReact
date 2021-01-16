@@ -19,7 +19,7 @@ class Orders extends React.Component {
 
     componentDidMount() {
         this.setState({loading: true})
-        let link = {API}.API + '/QuickOrder/orders/'
+        let link = API + '/QuickOrder/orders/'
         let data = {
             method: 'GET',
         }

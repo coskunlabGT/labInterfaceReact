@@ -9,6 +9,13 @@ function Navbar() {
                     exact
                     activeClassName = "active"
                     className = "tab"
+                    to = "/about"
+                >EZLabX</NavLink>
+
+                <NavLink
+                    exact
+                    activeClassName = "active"
+                    className = "tab"
                     to = "/"
                 >Home</NavLink>
                     

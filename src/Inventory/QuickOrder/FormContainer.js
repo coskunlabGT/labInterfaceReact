@@ -18,7 +18,7 @@ class Form extends React.Component {
     }
 
     componentDidMount() {
-        fetch({API}.API + '/QuickOrder/inventory/')
+        fetch(API + '/QuickOrder/inventory/')
             .then((response) => response.json())
             .then(data => {
                 let inventory = data.map(item => {
@@ -31,7 +31,7 @@ class Form extends React.Component {
                 console.log(error);
             })
 
-            fetch({API}.API + '/UserManagement/get-Users/')
+            fetch(API + '/UserManagement/get-Users/')
             .then((response) => response.json())
             .then(data => {
                 let users = data.map(user => {
@@ -54,7 +54,7 @@ class Form extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault()
-        const link = {API}.API+ '/QuickOrder/add-order/'
+        const link = API + '/QuickOrder/add-order/'
         const data = {
             method: 'POST',
             headers: {

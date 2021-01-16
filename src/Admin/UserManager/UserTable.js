@@ -22,7 +22,7 @@ class UserTable extends React.Component {
     }
 
     componentDidMount() {
-        let userLink = {API}.API + '/UserManagement/get-Users/'
+        let userLink = API + '/UserManagement/get-Users/'
         let data = {
             method: 'GET',
         }

@@ -1,7 +1,7 @@
 import React from 'react';
 import {API} from '../../Main/constants'
 
-class LevelsForm extends React.Component {
+class LevelForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -40,7 +40,7 @@ class LevelsForm extends React.Component {
             <div>
                 <form className='url-form' onSubmit={this.handleSubmit}>
                     <input type="text"
-                           placeholder="Enter link"
+                           placeholder="Enter embeddable link"
                            onChange={this.handleChange}
                            value={this.state.url}
                            ref={this.urlInput}/>
@@ -51,4 +51,4 @@ class LevelsForm extends React.Component {
     }
 }
 
-export default LevelsForm;
+export default LevelForm;

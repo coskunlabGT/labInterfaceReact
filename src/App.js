@@ -14,6 +14,7 @@ import Levels from "./Levels/Levels";
 import Calendar from "./Calendar/Schedule";
 import InventoryTable from './Admin/InventoryManager/InventoryTable'
 import UserTable from './Admin/UserManager/UserTable'
+import LevelManager from './Admin/LevelManager/LevelManager'
 import AdminUserForm from "./Admin/UserManager/AdminUserForm"
 import AdminInventoryForm from "./Admin/InventoryManager/AdminInventoryForm"
 
@@ -85,6 +86,10 @@ function App() {
 
               <Route exact path = '/admin/users'>
                   <UserTable />
+              </Route>
+
+              <Route exact path = '/admin/levels'>
+                  <LevelManager />
               </Route>
 
               <Route exact path = '/admin/users/form'>

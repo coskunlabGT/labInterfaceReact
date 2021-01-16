@@ -11,7 +11,7 @@ class UserTable extends React.Component {
         this.state = {
             users: [],
             selectedQuery: "",
-            selectedButton: "", 
+            selectedButton: "",
             user: {},
         }
         this.compareBy = this.compareBy.bind(this)
@@ -107,6 +107,7 @@ class UserTable extends React.Component {
                 <div className = "admin-buttons">
                     <Link to = "/admin/inventory">Inventory</Link>
                     <Link to = "/admin/users">Users</Link>
+                    <Link to = "/admin/levels">Levels</Link>
                 </div>
                 <form onSubmit = {this.onSubmit}>
 

@@ -15,7 +15,7 @@ class Inventory extends React.Component {
 
     componentDidMount() {
         this.setState({loading: true})
-        let inventoryLink = {API}.API + '/QuickOrder/inventory/'
+        let inventoryLink = API + '/QuickOrder/inventory/'
         let data = {
             method: 'GET',
         }
@@ -69,6 +69,7 @@ class Inventory extends React.Component {
             <div>
                 <div className = "inventory-buttons">
                     <Link to = "/inventory/quickOrder">Quick Order</Link>
+                    <Link to = "/inventory/generalOrder">General Order</Link>
                     <Link to = "/inventory/orders">Order History</Link>
                 </div>
                 <div className = "heading">

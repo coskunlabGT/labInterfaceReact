@@ -15,20 +15,20 @@ class Inventory extends React.Component {
 
     componentDidMount() {
         this.setState({loading: true})
-        let link = {API}.API + '/QuickOrder/inventory/'
+        let inventoryLink = {API}.API + '/QuickOrder/inventory/'
         let data = {
             method: 'GET',
         }
-        fetch(link, data)
+        fetch(inventoryLink, data)
             .then(response => response.json())
             .then(response => {
                 this.setState({
                     items: [response],
-                    loading: false
                 })
             }).catch(error => {
                 console.log(error)
             })
+
     }
 
     compareBy(key, sort) {
@@ -51,7 +51,6 @@ class Inventory extends React.Component {
 
     sortBy(event) {
         let selected = event.target.value.split(":")
-        console.log(selected)
         let arrayCopy = this.state.items[0]
         arrayCopy.sort(this.compareBy(selected[0], selected[1]))
         this.setState({order: [arrayCopy]})
@@ -64,18 +63,20 @@ class Inventory extends React.Component {
         return "No"
     }
 
+
     render() {
         return (
             <div>
-
+                <div className = "inventory-buttons">
+                    <Link to = "/inventory/quickOrder">Quick Order</Link>
+                    <Link to = "/inventory/orders">Order History</Link>
+                </div>
                 <div className = "heading">
                     <h1 className = "title">Inventory Items</h1>
                     <div className = "arrange">
-                        
                         <p className = "indicator">Sort By</p>
                         <select 
-                            id = "sort"
-                            className = 'form-control'
+                            className = "sort"
                             onChange = {this.sortBy}
                         >
                             <option value = "item_name:1">A to Z</option>
@@ -91,37 +92,35 @@ class Inventory extends React.Component {
                         
                         <thead className = 'headers'>
                             <tr>
-                                <th style={{width:"150px", height: "35px"}}>Item</th>
-                                <th style={{width:"150px"}}>Current Quantity</th>
-                                <th style={{width:"150px"}}>Min Quantity</th>
-                                <th style={{width:"150px"}}>Refill Needed</th>
+                                <th>Item</th>
+                                <th>Current Quantity</th>
+                                <th>Min Quantity</th>
+                                <th>Refill Needed</th>
                             </tr>
                             </thead>
                             
                             <tbody>
-                                {this.state.items.map( inventory => {
+                                {this.state.items.map(inventory => {
                                     return(
                                         inventory.map((item, index) => {
                                             const {item_name, current_quantity, min_quantity, refill_needed} = item
                                             return(
-                                                    <tr key = {index} className = "data">
-                                                        <td style = {{height: "70px"}}>{item_name}</td>
-                                                        <td>{current_quantity}</td>
-                                                        <td>{min_quantity}</td>
-                                                        <td>{this.convertText(refill_needed)}</td>
+                                                <tr key = {index} className = "data">
+                                                    <td style = {{height: "70px"}}>{item_name}</td>
+                                                    <td>{current_quantity}</td>
+                                                    <td>{min_quantity}</td>
+                                                    <td>{this.convertText(refill_needed)}</td>
                                                     </tr>
                                                 )
                                         })
                                     )
                                 })}
+                                
+
+
                             </tbody>
                     
                     </table>
-                    
-                    <div className = "inventoryButtons">
-                        <Link to = "/inventory/quickOrder">Quick Order</Link>
-                        <Link to = "/inventory/orders">Order History</Link>
-                    </div>
                 
                 </div>
             </div>

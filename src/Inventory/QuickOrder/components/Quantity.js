@@ -2,14 +2,16 @@ import React from 'react'
 
 function Quantity(props) {
     return (
-        <div className = "input">
+        <div>
             <h3 className = "label">Quantity</h3>
             <input
             type = "number"  
-            name = "requested_quantity"
             id = "quantity"
-            value = {props.quantity} 
-            min = "0" onChange = {props.handleChange} 
+            name = "requested_quantity"
+            value = {props.requested_quantity} 
+            min = "0" 
+            onChange = {props.handleChange} 
+            required
             />
         </div>
     )

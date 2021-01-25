@@ -4,6 +4,12 @@
   align-items: center;
 }
 
+.general-order {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .order-title {
   font-size: 45px;
   font-weight: 500;
@@ -15,8 +21,8 @@
 
 }
 
-/* Quick Order Boxes */
-#item, #quantity, #user {
+/* Quick Order and General Order Boxes */
+#item, #quantity, #user, #item-name, #student, #price, #comments {
   text-align: center;
   font-size: 18px;
   height: 30px;
@@ -32,6 +38,14 @@
   width: 235px;
   height: 35px;
 }
+
+#comments {
+  height: 150px;
+  max-width: 220px;
+  min-width: 220px;
+}
+
+
 
 #item:focus, #quantity:focus, #user:focus {
   border-color: #748B75;

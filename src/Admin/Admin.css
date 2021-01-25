@@ -55,7 +55,7 @@
 
 /* Admin Page Buttons */
 .admin-buttons {
-    margin-left: 40px;
+    margin: 0px 0px 20px 40px;
 }
 
 .admin-buttons > a {
@@ -79,7 +79,7 @@
 .url-form > input[type=text] {
     width: 70%;
     height: 45px;
-    margin: 10px 15px 0 50px;
+    margin: 10px 15px 0px 50px;
     padding: 0 15px;
     border: 1px solid #8C7C7C;
     border-radius: 4px;
@@ -92,10 +92,21 @@
 }
 
 .go-btn {
-    font-size: 15px;
-    height: 30px;
+    height: 50px;
     width: 50px;
-    padding: 0;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 8px;
+    border-color: transparent;
+    background: #41414111;
+    color:#414141;
+    margin-right: 10px;
+}
+
+.go-btn:hover {
+    background: #414141;
+    color: #ffffff;
 }
 
 .player-container {

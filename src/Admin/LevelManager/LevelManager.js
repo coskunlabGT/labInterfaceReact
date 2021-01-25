@@ -34,14 +34,13 @@ class LevelManager extends React.Component {
                 this.setState({
                     streams: [response]
                 })
-                console.log(this.state.streams);
             }).catch(error => {console.log(error)})
     }
 
     render() {
         return (
             <div>
-                <div className = "adminButtons">
+                <div className = "admin-buttons">
                     <Link to = "/admin/inventory">Inventory</Link>
                     <Link to = "/admin/users">Users</Link>
                     <Link to = "/admin/levels">Levels</Link>

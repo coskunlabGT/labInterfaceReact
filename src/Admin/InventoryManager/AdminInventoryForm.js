@@ -28,7 +28,7 @@ class Form extends React.Component {
                 min_quantity: "",
             })
         } else {
-            const link = API + '/QuickOrder/get-item/' + selected_id
+            const link = API + '/QuickOrder/get-item/' + selected_id + '/'
             let data = {
                 method: 'GET',
             }
@@ -68,10 +68,9 @@ class Form extends React.Component {
             }
 
             fetch(link,data)
-            .then(response => {console.log(response)})
             .catch(error => {console.log(error)})
             this.props.history.push('/admin/inventory')
-        } else { //edit
+        } else {
             event.preventDefault()
             const link = API + '/QuickOrder/update-item/' + selected_id + '/'
             const data = {
@@ -83,7 +82,7 @@ class Form extends React.Component {
             }
 
             fetch(link,data)
-            .then(response => {console.log(response)})
+            .then()
             .catch(error => {console.log(error)})
             this.props.history.push('/admin/inventory')
         }

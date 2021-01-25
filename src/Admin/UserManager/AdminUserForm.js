@@ -53,7 +53,6 @@ class Form extends React.Component {
                         first_time: response.first_time,
                         is_deleted: response.is_deleted
                     })
-                    console.log(response)
                 }).catch(error => {
                 console.log(error)
             })
@@ -79,13 +78,12 @@ class Form extends React.Component {
                 body: JSON.stringify(this.state)
             }
 
-            console.log(data.body);
 
             fetch(link,data)
-            .then(response => {console.log(response)})
+            .then()
             .catch(error => {console.log(error)})
             this.props.history.push('/admin/users')
-        } else { //edit
+        } else {
             event.preventDefault()
             const link = API + '/UserManagement/update-User/?user_id=' + selected_id + '/'
             const data = {
@@ -97,7 +95,7 @@ class Form extends React.Component {
             }
 
             fetch(link, data)
-            .then(response => {console.log(response)})
+            .then()
             .catch(error => {console.log(error)})
             this.props.history.push('/admin/users')
         }

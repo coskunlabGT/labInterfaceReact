@@ -68,7 +68,6 @@ class Form extends React.Component {
             }
 
             fetch(link,data)
-            .then(response => {console.log(response)})
             .catch(error => {console.log(error)})
             this.props.history.push('/admin/inventory')
         } else {
@@ -83,7 +82,7 @@ class Form extends React.Component {
             }
 
             fetch(link,data)
-            .then(response => {console.log(response)})
+            .then()
             .catch(error => {console.log(error)})
             this.props.history.push('/admin/inventory')
         }

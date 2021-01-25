@@ -34,7 +34,6 @@ class LevelManager extends React.Component {
                 this.setState({
                     streams: [response]
                 })
-                console.log(this.state.streams);
             }).catch(error => {console.log(error)})
     }
 

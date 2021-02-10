@@ -81,7 +81,7 @@ class UserTable extends React.Component {
         }
 
         if (button === 'delete' && this.state.selectedQuery !== "") {
-            const link = {API}.API+ '/UserManagement/delete-User/?user_id=' + this.state.selectedQuery
+            const link = {API}.API+ '/UserManagement/soft-delete-User/?user_id=' + this.state.selectedQuery
             let data = {
                 method: 'DELETE',
             }

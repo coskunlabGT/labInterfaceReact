@@ -68,6 +68,8 @@ class Form extends React.Component {
 
     handleSubmit(event) {
         if (this.state.page_type === 'Add') {
+            console.log("Adding user");
+            console.log(this.state)
             event.preventDefault()
             const link = API + '/UserManagement/add-User/'
             const data = {
@@ -80,7 +82,7 @@ class Form extends React.Component {
 
 
             fetch(link,data)
-            .then()
+            .then(console.log("success"))
             .catch(error => {console.log(error)})
             this.props.history.push('/admin/users')
         } else {

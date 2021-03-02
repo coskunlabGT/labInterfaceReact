@@ -13,9 +13,6 @@ class Form extends React.Component {
             email: "",
             role: "",
             phone_number: "",
-            token: "Token1",
-            first_time: false,
-            is_deleted: false,
             page_type: page_type
         }
         this.handleChange = this.handleChange.bind(this)
@@ -26,7 +23,7 @@ class Form extends React.Component {
         if (this.state.page_type === 'Add') {
             this.setState({
                 name: "",
-                role: "",
+                role: "Student",
                 email: "",
                 phone_number: "",
             })
@@ -49,9 +46,6 @@ class Form extends React.Component {
                         email: response.email,
                         role: response.role,
                         phone_number: response.phone_number,
-                        token: response.token,
-                        first_time: response.first_time,
-                        is_deleted: response.is_deleted
                     })
                 }).catch(error => {
                 console.log(error)
@@ -75,12 +69,14 @@ class Form extends React.Component {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(this.state)
+                body: JSON.stringify({
+                    name: this.state.name,
+                    email:  this.state.email,
+                    role:  this.state.role,
+                    phone_number:  this.state.phone_number
+                })
             }
-
-
             fetch(link,data)
-            .then()
             .catch(error => {console.log(error)})
             this.props.history.push('/admin/users')
         } else {
@@ -95,7 +91,6 @@ class Form extends React.Component {
             }
 
             fetch(link, data)
-            .then()
             .catch(error => {console.log(error)})
             this.props.history.push('/admin/users')
         }
@@ -105,9 +100,6 @@ class Form extends React.Component {
             email: "",
             role: "",
             phone_number: "",
-            token: "",
-            first_time: false,
-            is_deleted: false,
         })
         window.location.reload();
     }

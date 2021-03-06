@@ -13,13 +13,14 @@ class Form extends React.Component {
             email: "",
             role: "",
             phone_number: "",
-            page_type: page_type
+            page_type: page_type,
+            done: false
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    async componentDidMount() {
+    componentDidMount() {
         if (this.state.page_type === 'Add') {
             this.setState({
                 name: "",
@@ -36,8 +37,8 @@ class Form extends React.Component {
                     'Content-Type': 'application/json',
                 }
             }
-
-            await fetch(link, data)
+            setTimeout(() => {
+                fetch(link, data)
                 .then(response => response.json())
                 .then(response => {
                     this.setState({
@@ -47,9 +48,18 @@ class Form extends React.Component {
                         role: response.role,
                         phone_number: response.phone_number,
                     })
-                }).catch(error => {
-                console.log(error)
-            })
+                })
+                .then(
+                    setTimeout(() => {
+                        this.setState({
+                            done: true,
+                        })
+                    }, 600))
+                .catch(error => {
+                    console.log(error)
+                })
+            }, 700)
+
         }
     }
 
@@ -106,11 +116,15 @@ class Form extends React.Component {
 
     render() {
         return(
+            <div>
+            {!this.state.done ? <h2></h2> : 
             <FormComponent
             handleChange = {this.handleChange}
             handleSubmit = {this.handleSubmit}
             data = {this.state}
             />
+            }
+            </div>
         )
     }
 

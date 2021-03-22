@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
+import { Link, Redirect} from 'react-router-dom';
 
 
 const CLIENT_ID = '1011868441396-qdvadp42gdsch3k4n25espj899u0iv93.apps.googleusercontent.com';
@@ -38,6 +39,7 @@ class GoogleBtn extends Component {
       isLogined: false,
       accessToken: ''
     }));
+    // this.props.history.push('/');
   }
 
   handleLoginFailure (response) {

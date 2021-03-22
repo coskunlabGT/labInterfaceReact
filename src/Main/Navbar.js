@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import GoogleBtn from '../GoogleBtn.js'
+import { Redirect} from 'react-router-dom';
 
 function Navbar() {
     const [isLogined, setIsLogined] = useState(false);
@@ -14,6 +15,7 @@ function Navbar() {
       setAccessToken(null);
       setIsLogined(false);
       console.log(accessToken);
+      this.props.history.push("/home");
     }
     return (
         <div>

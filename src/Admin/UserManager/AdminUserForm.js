@@ -21,14 +21,7 @@ class Form extends React.Component {
     }
 
     componentDidMount() {
-        if (this.state.page_type === 'Add') {
-            this.setState({
-                name: "",
-                role: "Student",
-                email: "",
-                phone_number: "",
-            })
-        } else {
+        if (this.state.page_type === 'Update') {
             const link =  API + '/UserManagement/get-Users/?user_id=' + selected_id
 
             let data = {
@@ -51,15 +44,23 @@ class Form extends React.Component {
                 })
                 .then(
                     setTimeout(() => {
-                        this.setState({
-                            done: true,
-                        })
+                        this.setState({done: true})
                     }, 600))
                 .catch(error => {
                     console.log(error)
                 })
             }, 700)
 
+        } else {
+            this.setState({
+                name: "",
+                role: "Student",
+                email: "",
+                phone_number: "",
+                done: true,
+                page_type: "Add"
+            })
+            
         }
     }
 

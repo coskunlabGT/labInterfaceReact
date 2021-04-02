@@ -14,7 +14,7 @@ class CurrentReading extends Component {
 
     componentDidMount() {
         //this.getLatestReading()
-        this.timerId = setInterval(() => this.getLatestReading(), 10000)
+        this.timerId = setInterval(() => this.getLatestReading(), 2000)
     }
 
     componentWillUnmount() {
@@ -22,7 +22,7 @@ class CurrentReading extends Component {
     }
 
     getLatestReading() {
-        fetch(API + '/LevelFeature/get_latest/')
+        fetch(API + '/LevelFeature/get-latest/')
             .then(res => res.json())
             .then(
                 (result) => {

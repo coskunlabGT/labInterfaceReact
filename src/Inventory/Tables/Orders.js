@@ -9,31 +9,39 @@ class Orders extends React.Component {
         this.state = {
             order: [],
             filtered: [],
-            loading: false
+            done: false
         }
         this.compareBy = this.compareBy.bind(this)
         this.sortBy = this.sortBy.bind(this)
         this.filterBy = this.filterBy.bind(this)
+        this.search = this.search.bind(this)
     }
 
     componentDidMount() {
-        this.setState({loading: true})
-        let link = {API}.API + '/QuickOrder/orders/'
+        let link = API + '/QuickOrder/orders/'
         let data = {
             method: 'GET',
         }
-        fetch(link, data)
+        setTimeout(() => {
+            fetch(link, data)
             .then(response => response.json())
             .then(response => {
                 this.setState({
                     order: [response],
                     filtered: [response],
-                    loading: false
                 })
-                console.log(response)
-            }).catch(error => {
+            })
+            .then(
+                setTimeout(() => {
+                    this.setState({
+                        done: true,
+                    })
+                }, 600))
+            .catch(error => {
                 console.log(error);
             })
+        }, 700)
+
     }
 
     compareBy(key, sort) {
@@ -78,30 +86,44 @@ class Orders extends React.Component {
         this.setState({filtered: [arrayCopy]})
     }
 
+    search(event) {
+        let selected = event.target.value
+        let arrayCopy = []
+        this.state.order[0].forEach(item => {
+            if (item.order_name.toLowerCase().includes(selected.toLowerCase())) {
+                arrayCopy.push(item)
+            }
+            if (new Date(item.order_date).toLocaleString().includes(selected)) {
+                arrayCopy.push(item)
+            }
+        })
+        this.setState({filtered: [arrayCopy]})
+
+    }
+
     render() {
         return (
             <div>
-
+                {!this.state.done ? <h2></h2> : 
+                <div>
                 <div className = "heading">
                     <h1 className = "title">Order History</h1>
                     <div className = "arrange">
-                        
+                        <input type="text" id="search" onChange={this.search} placeholder="Search for orders.."/>
                         <p className = "indicator">Sort By</p>
                         <select 
-                            id = "sort"
-                            className = 'form-control'
+                            className = 'sort'
                             onChange = {this.sortBy}
                             >
-                            <option value = "order_date:1">Oldest to Newest</option>
                             <option value = "order_date:2">Newest to Oldest</option>
+                            <option value = "order_date:1">Oldest to Newest</option>
                             <option value = "order_name:1">A to Z</option>
                             <option value = "order_name:2">Z to A</option>
                         </select>
                         
                         <p className = "indicator">Filter</p>
                         <select 
-                            id = "filter"
-                            className = 'form-control'
+                            className = "filter"
                             onChange = {this.filterBy}
                             >
                             <option value = "all">All Orders</option>
@@ -148,7 +170,8 @@ class Orders extends React.Component {
 
                     </table>
                 </div>
-
+                </div>
+                }
             </div>
         )
     }

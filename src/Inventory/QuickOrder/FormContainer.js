@@ -12,13 +12,15 @@ class Form extends React.Component {
             user: "",
             students: [],
             items: [],
+            done: false
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     componentDidMount() {
-        fetch({API}.API + '/QuickOrder/inventory/')
+        setTimeout(() => {
+            fetch(API + '/QuickOrder/inventory/')
             .then((response) => response.json())
             .then(data => {
                 let inventory = data.map(item => {
@@ -27,11 +29,12 @@ class Form extends React.Component {
                 this.setState({
                     items: [{value: '', display: ''}].concat(inventory)
                 })
-            }).catch(error => {
+            })
+            .catch(error => {
                 console.log(error);
             })
 
-            fetch({API}.API + '/UserManagement/get-Users/')
+            fetch(API + '/UserManagement/get-Users/')
             .then((response) => response.json())
             .then(data => {
                 let users = data.map(user => {
@@ -40,9 +43,17 @@ class Form extends React.Component {
                 this.setState({
                     students: [{value: '', display: ''}].concat(users)
                 })
-            }).catch(error => {
+            })
+            .catch(error => {
                 console.log(error);
             })
+            setTimeout(() => {
+                this.setState({
+                    done: true,
+                })
+            }, 600)
+        }, 700)
+        
     }
 
     handleChange(event) {
@@ -54,7 +65,7 @@ class Form extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault()
-        const link = {API}.API+ '/QuickOrder/add-order/'
+        const link = API + '/QuickOrder/add-order/'
         const data = {
             method: 'POST',
             headers: {
@@ -64,18 +75,22 @@ class Form extends React.Component {
         }
 
         fetch(link,data)
-        .then(response => {console.log(response)})
+        .then()
         .catch(error => {console.log(error)})
         this.props.history.push('../inventory')
     }
 
     render() {
         return(
+            <div>
+            {!this.state.done ? <h2></h2> : 
             <FormComponent 
             handleChange = {this.handleChange}
             handleSubmit = {this.handleSubmit}
             data = {this.state}
-        />
+            />
+            }
+            </div>
         )
     }
 

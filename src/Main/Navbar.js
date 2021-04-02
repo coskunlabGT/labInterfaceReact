@@ -25,6 +25,13 @@ function Navbar() {
                     exact
                     activeClassName = "active"
                     className = "tab"
+                    to = "/about"
+                >EZLabX</NavLink>
+
+                <NavLink
+                    exact
+                    activeClassName = "active"
+                    className = "tab"
                     to = "/"
                 >Home</NavLink>
 
@@ -57,6 +64,12 @@ function Navbar() {
                     className = "tab"
                     to = {isLogined ? "/dashboards" : '/'}
                 >Dashboards</NavLink>
+
+                <NavLink
+                    activeClassName = "active"
+                    className = "tab"
+                    to = "/admin/inventory"
+                >Admin</NavLink>
 
             </nav>
         </div>

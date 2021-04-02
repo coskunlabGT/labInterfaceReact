@@ -7,8 +7,8 @@ function Quantity(props) {
             <input
             type = "number"  
             id = "quantity"
-            name = "requested_quantity"
-            value = {props.requested_quantity} 
+            name = "quantity"
+            value = {props.quantity} 
             min = "0" 
             onChange = {props.handleChange} 
             required

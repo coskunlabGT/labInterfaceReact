@@ -1,0 +1,131 @@
+.admin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#form-title {
+    font-size: 45px;
+    font-weight: 500;
+    border-radius: 8px;
+    background: #414141;
+    color: #ffffff;
+    padding: 5px 30px 5px 30px;
+    margin: 60px 0px 10px 0px;
+}
+
+#name, #role, #email, #phone,
+#item-name, #curr-quantity, #min-quantity {
+    text-align: center;
+    font-size: 18px;
+    height: 30px;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 3px;
+    outline: none;
+    color: #414141;
+    padding: 0px 5px 0px 5px;
+}
+
+#role {
+    width: 230px;
+    height: 35px;
+}
+
+#name:focus, #role:focus, #email:focus, #phone:focus,
+#item-name:focus, #curr-quantity:focus, #min-quantity:focus {
+    border-color: #748B75;
+}
+
+
+/* Admin Table Actions */
+.actions > button {
+    text-decoration: none;
+    font-size: 15px;
+    color: #414141;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.actions > button:hover {
+    text-decoration: underline;
+}
+
+
+/* Admin Page Buttons */
+.admin-buttons {
+    margin: 0px 0px 20px 40px;
+}
+
+.admin-buttons > a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 8px;
+    background: #41414111;
+    color:#414141;
+    padding: 8px;
+    margin-right: 10px;
+}
+
+.admin-buttons > a:hover {
+    background: #414141;
+    color: #ffffff;
+}
+
+/* Level Manager CSS */
+
+.url-form > input[type=text] {
+    width: 70%;
+    height: 45px;
+    margin: 10px 15px 0px 50px;
+    padding: 0 15px;
+    border: 1px solid #8C7C7C;
+    border-radius: 4px;
+    font-size: 21px;
+    color: #414141;
+}
+
+::placeholder {
+    color: #B1A6A6;
+}
+
+.go-btn {
+    height: 50px;
+    width: 50px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 8px;
+    border-color: transparent;
+    background: #41414111;
+    color:#414141;
+    margin-right: 10px;
+}
+
+.go-btn:hover {
+    background: #414141;
+    color: #ffffff;
+}
+
+.player-container {
+    position: relative;
+}
+
+.livestream {
+    width: 350px;
+    height: 320px;
+    margin: 0 0 25px 50px;
+}
+
+.exit-btn {
+    font-size: 15px;
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    padding: 0;
+    position: absolute;
+    margin-top: -10px;
+    margin-left: -10px;
+}

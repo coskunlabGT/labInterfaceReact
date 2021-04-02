@@ -1,0 +1,51 @@
+.title {
+    font-size: 45px;
+    font-weight: 700;
+    color: #414141;
+    margin: 30px 0px -45px 40px;
+}
+
+.arrange {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 40px;
+}
+
+.indicator {
+    color: #4141416e;
+    padding: 0px 10px 0px 10px;
+}
+
+.sort {
+    width: 135px;
+    height: 20px;
+    border-radius: 3px;
+}
+
+.filter {
+    width: 135px;
+    height: 20px;
+    border-radius: 3px;
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 20px;
+    color: #414141;
+    margin: 0px 40px 40px 40px;
+
+}
+
+.headers > tr > th {
+    background-color: #41414111;
+    height: 35px;
+    border: none;    
+}
+
+.data > td {
+    border: none;
+}

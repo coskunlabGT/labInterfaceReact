@@ -7,9 +7,8 @@ import Navbar from './Main/Navbar'
 import PageNotFound from './Main/PageNotFound'
 import QuickOrder from './Inventory/QuickOrder/FormContainer'
 import GeneralOrder from './Inventory/GeneralOrder/FormContainer'
-import Home from './Home/Home'
 import EZLabX from './EZLabX/EZLabX'
-import Dashboard from './Dashboard/Dashboard'
+// import Dashboard from './Dashboard/Dashboard'
 import Levels from "./Levels/Levels";
 import Calendar from "./Calendar/Schedule";
 import InteractiveHomePage from './InteractiveHomePage';
@@ -31,7 +30,6 @@ import "../node_modules/@syncfusion/ej2-schedule/styles/material.css";
 
 import './Inventory/Inventory.css'
 import './Main/Main.css'
-import './Home/Home.css'
 import './EZLabX/EZLabX.css'
 import './Admin/Admin.css'
 import './Main/Tables.css'
@@ -45,15 +43,11 @@ function App() {
           <div>
             <Navbar />
             <Switch>
-              <Route exact path = '/'>
-                <Home />
-              </Route>
-
               <Route exact path = '/home'>
                 <InteractiveHomePage />
               </Route>
               
-              <Route exact path = '/about'>
+              <Route exact path = '/'>
                 <EZLabX />
               </Route>
 
@@ -81,9 +75,9 @@ function App() {
                 <Calendar/>
               </Route>
 
-              <Route exact path = '/dashboards'>
+              {/* <Route exact path = '/dashboards'>
                 <Dashboard />
-              </Route>
+              </Route> */}
 
               <Route exact path = '/admin/inventory'>
                 <InventoryTable />

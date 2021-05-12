@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import GoogleBtn from '../GoogleBtn.js'
-import { Redirect} from 'react-router-dom';
 
 function Navbar() {
     const [isLogined, setIsLogined] = useState(false);
@@ -17,63 +16,79 @@ function Navbar() {
       console.log(accessToken);
       this.props.history.push("/home");
     }
-    return (
-        <div>
-            <nav className = "navbar">
-                <GoogleBtn isLogined={isLogined} setLoggedIn={setLoggedIn} setLoggedOut={setLoggedOut} />
-                <NavLink
-                    exact
-                    activeClassName = "active"
-                    className = "tab"
-                    to = "/about"
-                >EZLabX</NavLink>
 
-                <NavLink
-                    exact
-                    activeClassName = "active"
-                    className = "tab"
-                    to = "/"
-                >Home</NavLink>
+    if (!isLogined) {
+        return (
+            <div>
+                    <div className = "login">
+                        <GoogleBtn className = "google" setLoggedIn={setLoggedIn} setLoggedOut={setLoggedOut} />
+                    </div>
+                    <nav className = "navbar">
 
-                <NavLink
-                    activeClassName = 'active'
-                    className = 'tab'
-                    to = {isLogined ? '/home' : '/'}
-                >NewHome</NavLink>
-
-                <NavLink
-                    activeClassName = "active"
-                    className = "tab"
-                    to = {isLogined ? "/inventory" : '/'}
-                >Inventory</NavLink>
-
-                <NavLink
-                    activeClassName = "active"
-                    className = "tab"
-                    to = {isLogined ? "/levels" : '/'}
-                >Levels</NavLink>
-
-               <NavLink
-                    activeClassName = "active"
-                    className = "tab"
-                    to = {isLogined ? "/calendar" : '/'}
-                >Calendar</NavLink>
-
-                <NavLink
-                    activeClassName = "active"
-                    className = "tab"
-                    to = {isLogined ? "/dashboards" : '/'}
-                >Dashboards</NavLink>
-
-                <NavLink
-                    activeClassName = "active"
-                    className = "tab"
-                    to = "/admin/inventory"
-                >Admin</NavLink>
-
-            </nav>
-        </div>
-    )
+                    <NavLink
+                        exact
+                        activeClassName = "active"
+                        className = "tab"
+                        to = "/about"
+                    >EZLabX</NavLink>
+                </nav>
+            </div>
+        )
+    } else {
+        return (
+            <div>
+                <nav className = "navbar">
+                    <div className = "login">
+                        <GoogleBtn isLogined={isLogined} setLoggedIn={setLoggedIn} setLoggedOut={setLoggedOut} />
+                    </div>
+                    <NavLink
+                        exact
+                        activeClassName = "active"
+                        className = "tab"
+                        to = "/"
+                    >EZLabX</NavLink>
+    
+                    <NavLink
+                        activeClassName = 'active'
+                        className = 'tab'
+                        to = '/home'
+                    >NewHome</NavLink>
+    
+                    <NavLink
+                        activeClassName = "active"
+                        className = "tab"
+                        to = "/inventory"
+                    >Inventory</NavLink>
+    
+                    <NavLink
+                        activeClassName = "active"
+                        className = "tab"
+                        to = "/levels"
+                    >Levels</NavLink>
+    
+                   <NavLink
+                        activeClassName = "active"
+                        className = "tab"
+                        to =  "/calendar"
+                    >Calendar</NavLink>
+    
+                    {/* <NavLink
+                        activeClassName = "active"
+                        className = "tab"
+                        to = "/dashboards"
+                    >Dashboards</NavLink>
+     */}
+                    <NavLink
+                        activeClassName = "active"
+                        className = "tab"
+                        to = "/admin/inventory"
+                    >Admin</NavLink>
+    
+                </nav>
+            </div>
+        )
+    }
+   
 }
 
 export default Navbar

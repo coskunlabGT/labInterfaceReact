@@ -29,7 +29,7 @@ function Navbar() {
                         exact
                         activeClassName = "active"
                         className = "tab"
-                        to = "/about"
+                        to = "/"
                     >EZLabX</NavLink>
                 </nav>
             </div>
